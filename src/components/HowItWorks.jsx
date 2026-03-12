@@ -318,8 +318,8 @@ export default function HowItWorks() {
                         </div>
 
                         {/* Steps — each step gets its own viewport-sized lane */}
-                        <div className="pb-[320px] lg:pb-0">
-                          <div ref={stepsAreaRef}>
+                        <div ref={stepsAreaRef} className="pb-[320px] lg:pb-0">
+                          <div>
                             {steps.map((step, index) => {
                                 const isActive = activeStep === index;
                                 return (
