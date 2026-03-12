@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -14,11 +14,12 @@ import Deliverables from './components/Deliverables';
 import FooterCTA from './components/FooterCTA';
 import ContactCTA from './components/ContactCTA';
 import Footer from './components/Footer';
-import Impressum from './pages/Impressum';
-import Datenschutz from './pages/Datenschutz';
-import AGB from './pages/AGB';
-import AboutUs from './pages/AboutUs';
-import Contact from './pages/Contact';
+
+const Impressum = React.lazy(() => import('./pages/Impressum'));
+const Datenschutz = React.lazy(() => import('./pages/Datenschutz'));
+const AGB = React.lazy(() => import('./pages/AGB'));
+const AboutUs = React.lazy(() => import('./pages/AboutUs'));
+const Contact = React.lazy(() => import('./pages/Contact'));
 
 const HomePage = () => (
     <>
@@ -81,14 +82,16 @@ function App() {
                 <Navbar />
 
                 <main className="flex-grow">
-                    <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/impressum" element={<Impressum />} />
-                        <Route path="/datenschutz" element={<Datenschutz />} />
-                        <Route path="/agb" element={<AGB />} />
-                        <Route path="/ueber-uns" element={<AboutUs />} />
-                        <Route path="/kontakt" element={<Contact />} />
-                    </Routes>
+                    <Suspense fallback={<div className="min-h-screen" />}>
+                        <Routes>
+                            <Route path="/" element={<HomePage />} />
+                            <Route path="/impressum" element={<Impressum />} />
+                            <Route path="/datenschutz" element={<Datenschutz />} />
+                            <Route path="/agb" element={<AGB />} />
+                            <Route path="/ueber-uns" element={<AboutUs />} />
+                            <Route path="/kontakt" element={<Contact />} />
+                        </Routes>
+                    </Suspense>
                 </main>
 
                 {/* Global Footer (Dark) */}

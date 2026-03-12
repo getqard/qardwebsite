@@ -97,13 +97,14 @@ export default function PushSection() {
 
                             {/* Phone mockup — centered on mobile, right on desktop */}
                             <div className="relative flex justify-center lg:justify-end">
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] bg-indigo-400/10 rounded-full blur-[80px] pointer-events-none -z-10"></div>
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] bg-indigo-400/10 rounded-full blur-[30px] lg:blur-[80px] pointer-events-none -z-10"></div>
                                 <div className="w-[275px] md:w-[290px] lg:w-[320px]">
                                     <DeviceMockup className="w-full text-left">
                                         <div className="w-full h-full relative bg-zinc-900 rounded-[28px] overflow-hidden">
                                             <img
                                                 src="/lockscreen-bg.webp"
-                                                alt="Wallpaper"
+                                                alt="iPhone Sperrbildschirm mit Push-Nachricht"
+                                                loading="lazy"
                                                 className="absolute inset-0 w-full h-full object-cover"
                                                 onError={(e) => {
                                                     e.target.style.display = 'none';
@@ -133,6 +134,7 @@ export default function PushSection() {
                                                                 <img
                                                                     src={notif.logo}
                                                                     alt={notif.title}
+                                                                    loading="lazy"
                                                                     className="absolute inset-0 w-full h-full object-contain p-[1px] rounded-[8px]"
                                                                     onError={(e) => {
                                                                         e.target.style.display = 'none';

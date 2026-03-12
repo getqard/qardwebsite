@@ -6,7 +6,7 @@ export default function BonusReviews() {
     return (
         <section id="google-reviews" className="pt-32 pb-12 text-[#0A0A0F] relative">
             {/* Background glowing orb - repositioned for blend */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-green-400/5 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] lg:w-[800px] lg:h-[600px] bg-green-400/5 rounded-full blur-[40px] lg:blur-[120px] pointer-events-none"></div>
 
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative z-10">
@@ -50,7 +50,7 @@ export default function BonusReviews() {
                     <div className="w-full lg:w-[540px] flex-shrink-0 relative flex justify-center py-12 lg:py-0">
 
                         {/* Dramatic Glow Background */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-green-400/10 rounded-full blur-[100px] pointer-events-none"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] lg:w-[400px] lg:h-[400px] bg-green-400/10 rounded-full blur-[40px] lg:blur-[100px] pointer-events-none"></div>
 
                         {/* Interactive Review Card */}
                         <motion.div

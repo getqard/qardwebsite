@@ -83,7 +83,7 @@ export default function AutomationsSection() {
                 {/* Visual Cards Mockup */}
                 <div className="order-2 relative h-[600px] flex items-center justify-center" ref={containerRef}>
                     {/* Background glow */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-indigo-100 via-purple-50 to-orange-50 rounded-full blur-[80px] pointer-events-none opacity-70"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] lg:w-[500px] lg:h-[500px] bg-gradient-to-tr from-indigo-100 via-purple-50 to-orange-50 rounded-full blur-[30px] lg:blur-[80px] pointer-events-none opacity-70"></div>
 
                     <motion.div
                         className="relative z-10 w-full max-w-[420px] pt-8"
@@ -100,7 +100,8 @@ export default function AutomationsSection() {
                             <div className="w-10 h-10 rounded-[8px] flex items-center justify-center shadow-[inset_0_1px_4px_rgba(0,0,0,0.3)] relative overflow-hidden" style={{ backgroundColor: "rgb(95, 70, 43)" }}>
                                 <img
                                     src="/cafe-milano-logo.png"
-                                    alt="Logo"
+                                    alt="Café Milano Logo"
+                                    loading="lazy"
                                     className="absolute inset-0 w-full h-full object-contain p-[1px] rounded-[8px]"
                                 />
                             </div>

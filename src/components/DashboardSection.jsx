@@ -62,7 +62,7 @@ export default function DashboardSection() {
     return (
         <section id="dashboard" className="pt-24 pb-12 text-white relative z-10 w-full">
             {/* Background elements - Faded out at the bottom to prevent sharp edges */}
-            <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none -translate-y-1/2"></div>
+            <div className="absolute top-1/2 left-0 w-[250px] h-[250px] lg:w-[500px] lg:h-[500px] bg-indigo-600/15 rounded-full blur-[40px] lg:blur-[140px] pointer-events-none -translate-y-1/2"></div>
             
             {/* Soft gradient mask at the bottom to fade out any stray blur colors */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-qard-dark to-transparent pointer-events-none z-0"></div>
@@ -92,7 +92,7 @@ export default function DashboardSection() {
                         <div className="flex items-center gap-3 md:gap-4">
                             <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center p-[2px]">
                                 <div className="bg-[#08080A] w-full h-full rounded-[7px] md:rounded-[10px] flex items-center justify-center overflow-hidden">
-                                    <img src="/ICONAPP.svg" alt="QARD" className="w-full h-full p-1 md:p-1.5" />
+                                    <img src="/ICONAPP.svg" alt="QARD" loading="lazy" className="w-full h-full p-1 md:p-1.5" />
                                 </div>
                             </div>
                             <div>

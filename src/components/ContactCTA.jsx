@@ -62,14 +62,16 @@ export default function ContactCTA() {
     return (
         <section className="pt-12 pb-16 lg:pb-32 bg-white text-[#0A0A0F] relative overflow-hidden" id="contact">
             {/* Advanced Background Decorations */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-50/40 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-50/40 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-[250px] h-[250px] lg:w-[600px] lg:h-[600px] bg-indigo-50/40 rounded-full blur-[40px] lg:blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-[250px] h-[250px] lg:w-[600px] lg:h-[600px] bg-purple-50/40 rounded-full blur-[40px] lg:blur-[120px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
-            {/* Floating Decorative Icons */}
-            <FloatingIcon icon={Wallet} delay={0} x="10%" y="20%" size={40} />
-            <FloatingIcon icon={Star} delay={2} x="85%" y="15%" size={32} />
-            <FloatingIcon icon={Bell} delay={4} x="15%" y="70%" size={36} />
-            <FloatingIcon icon={Check} delay={1} x="80%" y="80%" size={28} />
+            {/* Floating Decorative Icons — hidden on mobile (GPU savings) */}
+            <div className="hidden lg:block">
+                <FloatingIcon icon={Wallet} delay={0} x="10%" y="20%" size={40} />
+                <FloatingIcon icon={Star} delay={2} x="85%" y="15%" size={32} />
+                <FloatingIcon icon={Bell} delay={4} x="15%" y="70%" size={36} />
+                <FloatingIcon icon={Check} delay={1} x="80%" y="80%" size={28} />
+            </div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
@@ -230,7 +232,7 @@ export default function ContactCTA() {
                                                 whileTap={{ scale: 0.985 }}
                                                 className="flex items-center justify-center gap-3 bg-[#25D366] text-white font-black text-xl py-5 rounded-2xl transition-all group shadow-xl shadow-green-500/10 relative overflow-hidden"
                                             >
-                                                <img src="/whatsapp.svg" alt="WhatsApp" className="w-8 h-8 relative z-10 group-hover:scale-105 transition-transform" />
+                                                <img src="/whatsapp.svg" alt="WhatsApp" loading="lazy" className="w-8 h-8 relative z-10 group-hover:scale-105 transition-transform" />
                                                 <span className="relative z-10 font-black text-white">Direkt per WhatsApp</span>
                                             </motion.a>
                                         </div>

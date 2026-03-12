@@ -7,8 +7,8 @@ export default function FooterCTA() {
     return (
         <section className="relative z-10 pt-16 lg:pt-24 pb-12">
             {/* Subtle ambient glows */}
-            <div className="absolute -right-40 top-1/3 w-[600px] h-[600px] bg-[rgba(255,0,212,0.08)] rounded-full blur-[200px] pointer-events-none" />
-            <div className="absolute -right-20 bottom-0 w-[600px] h-[600px] bg-[rgba(26,86,255,0.15)] rounded-full blur-[200px] pointer-events-none translate-y-1/3" />
+            <div className="absolute -right-40 top-1/3 w-[250px] h-[250px] lg:w-[600px] lg:h-[600px] bg-[rgba(255,0,212,0.08)] rounded-full blur-[60px] lg:blur-[200px] pointer-events-none" />
+            <div className="absolute -right-20 bottom-0 w-[250px] h-[250px] lg:w-[600px] lg:h-[600px] bg-[rgba(26,86,255,0.15)] rounded-full blur-[60px] lg:blur-[200px] pointer-events-none translate-y-1/3" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 {/* Big CTA */}
@@ -39,8 +39,8 @@ export default function FooterCTA() {
                     />
 
                     {/* Subtle Glass Overlays for Depth */}
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none mix-blend-screen" />
-                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 pointer-events-none mix-blend-screen" />
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-[40px] lg:blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none mix-blend-screen" />
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[40px] lg:blur-[120px] translate-y-1/2 -translate-x-1/2 pointer-events-none mix-blend-screen" />
 
                     <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
 

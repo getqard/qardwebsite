@@ -28,8 +28,8 @@ export default function Hero() {
     return (
         <section className="relative pt-32 pb-12 lg:pt-40 lg:pb-32 overflow-hidden bg-qard-dark text-white min-h-[85vh] flex items-center">
             {/* Dark Navy QARD Gradient Array */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[800px] lg:h-[800px] bg-indigo-600/10 rounded-full blur-[40px] lg:blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[250px] h-[250px] lg:w-[600px] lg:h-[600px] bg-blue-500/10 rounded-full blur-[40px] lg:blur-[140px] pointer-events-none" />
             <div className="absolute inset-0 bg-grid-pattern-dense opacity-20 pointer-events-none mix-blend-overlay"></div>
 
             <div className="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -116,7 +116,7 @@ export default function Hero() {
                                                 <div className="w-[34px] h-[34px] rounded-[8px] bg-black shrink-0 flex items-center justify-center shadow-[inset_0_1px_4px_rgba(0,0,0,0.3)] relative overflow-hidden mt-0.5">
                                                     <img
                                                         src="/doener-logo.webp"
-                                                        alt="Logo"
+                                                        alt="Original Berliner Döner Logo"
                                                         className="absolute inset-0 w-full h-full object-contain p-[1px] rounded-[8px]"
                                                         onError={(e) => {
                                                             e.target.style.display = 'none';

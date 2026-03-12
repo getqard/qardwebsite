@@ -39,10 +39,12 @@ export default function GeofencingSection() {
                 <div className="order-2 lg:order-1 relative h-[380px] lg:h-[500px] flex items-center justify-center rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-200" ref={containerRef}>
 
                     {/* Background Map Image */}
-                    <div
-                        className="absolute inset-0 bg-cover bg-center transition-transform duration-1000"
-                        style={{ backgroundImage: `url('/geofence-map.webp')` }}
-                    ></div>
+                    <img
+                        src="/geofence-map.webp"
+                        alt="Geofencing-Karte mit GPS-Radius um ein Geschäft"
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000"
+                    />
 
                     {/* Darker overlay to make UI elements pop slightly */}
                     <div className="absolute inset-0 bg-black/5 mix-blend-multiply"></div>
@@ -101,7 +103,8 @@ export default function GeofencingSection() {
                                     <div className="w-[34px] h-[34px] rounded-[8px] shrink-0 flex items-center justify-center shadow-[inset_0_1px_4px_rgba(0,0,0,0.3)] relative overflow-hidden mt-0.5" style={{ backgroundColor: "rgb(95, 70, 43)" }}>
                                         <img
                                             src="/cafe-milano-logo.png"
-                                            alt="Logo"
+                                            alt="Café Milano Logo"
+                                            loading="lazy"
                                             className="absolute inset-0 w-full h-full object-contain p-[1px] rounded-[8px]"
                                             onError={(e) => {
                                                 e.target.style.display = 'none';

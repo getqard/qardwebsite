@@ -11,8 +11,8 @@ export default function Footer() {
 
     return (
         <footer className="text-gray-400 py-12 relative z-10">
-            <div className="absolute -top-32 -right-20 w-[500px] h-[500px] bg-[rgba(255,0,212,0.06)] rounded-full blur-[180px] pointer-events-none" />
-            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[rgba(26,86,255,0.1)] rounded-full blur-[160px] pointer-events-none" />
+            <div className="absolute -top-32 -right-20 w-[200px] h-[200px] lg:w-[500px] lg:h-[500px] bg-[rgba(255,0,212,0.06)] rounded-full blur-[60px] lg:blur-[180px] pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-[200px] h-[200px] lg:w-[500px] lg:h-[500px] bg-[rgba(26,86,255,0.1)] rounded-full blur-[60px] lg:blur-[160px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -25,7 +25,7 @@ export default function Footer() {
                             onClick={scrollToTop}
                             className="flex items-center gap-2 mb-4"
                         >
-                            <img src="/LOGO_QARD_Master-02.svg" alt="QARD Logo" className="h-8 w-auto" />
+                            <img src="/LOGO_QARD_Master-02.svg" alt="QARD Logo" loading="lazy" className="h-8 w-auto" />
                         </Link>
                         <p className="text-white/40 text-[15px] mb-6 leading-relaxed max-w-sm">
                             Die smarte Plattform für nachhaltige Kundenbindung. Verwandle Laufkundschaft in echte Stammkunden — einfach, digital und messbar.
@@ -39,7 +39,7 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 className="h-9 px-3 rounded-xl bg-white/5 flex items-center gap-2 hover:bg-white/10 transition-all border border-white/5 group shrink-0"
                             >
-                                <img src="/insta.svg" alt="" className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" />
+                                <img src="/insta.svg" alt="QARD auf Instagram" loading="lazy" className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" />
                                 <span className="text-[13px] font-bold text-white/70 group-hover:text-white transition-colors">qard.systems</span>
                             </a>
                             <div className="h-4 w-px bg-white/10 shrink-0 mx-1"></div>

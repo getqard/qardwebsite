@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getqard.com/sitemap.xml
