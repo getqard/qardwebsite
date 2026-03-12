@@ -10,20 +10,22 @@ import {
     Dumbbell,
     Pizza,
     PlusSquare,
-    Sparkle
+    Sparkle,
+    Beer,
+    Heart
 } from 'lucide-react';
 
 const targets = [
     { name: "Restaurants", icon: Utensils, color: "text-orange-500", bg: "bg-orange-50" },
     { name: "Cafés", icon: Coffee, color: "text-amber-700", bg: "bg-amber-50" },
     { name: "Barbershops", icon: Scissors, color: "text-blue-500", bg: "bg-blue-50" },
-    { name: "Friseure", icon: Wind, color: "text-pink-500", bg: "bg-pink-50" },
-    { name: "Apotheken", icon: PlusSquare, color: "text-red-500", bg: "bg-red-50" },
-    { name: "Shisha Bars", icon: Sparkles, color: "text-purple-500", bg: "bg-purple-50" },
-    { name: "Kosmetik", icon: Sparkle, color: "text-emerald-500", bg: "bg-emerald-50" },
     { name: "Bäckereien", icon: Pizza, color: "text-yellow-600", bg: "bg-yellow-50" },
+    { name: "Kosmetik", icon: Sparkle, color: "text-emerald-500", bg: "bg-emerald-50" },
+    { name: "Shisha Bars", icon: Wind, color: "text-purple-500", bg: "bg-purple-50" },
     { name: "Fitness", icon: Dumbbell, color: "text-blue-600", bg: "bg-blue-50" },
-    { name: "Einzelhandel", icon: ShoppingBag, color: "text-indigo-500", bg: "bg-indigo-50" }
+    { name: "Einzelhandel", icon: ShoppingBag, color: "text-indigo-500", bg: "bg-indigo-50" },
+    { name: "Nagelstudios", icon: Heart, color: "text-pink-500", bg: "bg-pink-50" },
+    { name: "Bars & Clubs", icon: Beer, color: "text-red-500", bg: "bg-red-50" }
 ];
 
 export default function TargetAudience() {
@@ -42,7 +44,7 @@ export default function TargetAudience() {
                         das <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Stammkunden will.</span>
                     </h2>
                     <p className="text-xl text-gray-500 max-w-2xl mx-auto font-medium">
-                        Vom inhabergeführten Café um die Ecke bis zur regionalen Filialkette – QARD passt sich deinem Business an.
+                        Egal ob Café, Barbershop oder Restaurant — QARD passt sich deinem Business an.
                     </p>
                 </motion.div>
 

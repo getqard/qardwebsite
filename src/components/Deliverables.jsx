@@ -7,6 +7,7 @@ import {
     QrCode,
     HeartHandshake
 } from 'lucide-react';
+import { smoothScrollTo } from '../utils/smoothScroll';
 
 const DeliverableCard = ({ icon: Icon, title, desc, delay }) => (
     <motion.div
@@ -34,22 +35,22 @@ export default function Deliverables() {
         {
             icon: Layout,
             title: "Individuelles Design",
-            desc: "Dein Wallet-Pass im exakten Look deiner Marke."
+            desc: "Alles in deinem Look — mit deinem Logo und deinen Farben."
         },
         {
             icon: Smartphone,
             title: "Scanner-App & Dashboard",
-            desc: "Eigene App für dein Team und Adminpanel inklusive."
+            desc: "Dein Team bekommt eine eigene App zum Stempeln. Dein Dashboard ist sofort einsatzbereit."
         },
         {
             icon: QrCode,
             title: "Hardware Inklusive",
-            desc: "5 hochwertige Aufsteller mit NFC & QR direkt per Post."
+            desc: "5 Aufsteller mit NFC & QR-Code — direkt zu dir geliefert."
         },
         {
             icon: HeartHandshake,
             title: "Full-Service Setup",
-            desc: "Wir programmieren alles. Du musst gar nichts machen."
+            desc: "Wir richten alles ein. Du musst nichts tun."
         }
     ];
 
@@ -73,11 +74,11 @@ export default function Deliverables() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-6xl font-display font-bold mb-6 leading-[1.1] tracking-tight text-[#0A0A0F]"
                     >
-                        Kein DIY. <br />
+                        Kein Aufwand. <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Wir machen das für dich.</span>
                     </motion.h2>
-                    <p className="text-lg text-gray-500 max-w-xl mx-auto">
-                        Lehn dich zurück. Wir gestalten, programmieren und liefern alles schlüsselfertig – startklar in 48 Stunden.
+                    <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+                        Lehn dich zurück. Wir gestalten, richten ein und liefern alles schlüsselfertig — startklar in 48 Stunden.
                     </p>
                 </div>
 
@@ -98,12 +99,12 @@ export default function Deliverables() {
                     className="mt-16 p-8 rounded-[2.5rem] bg-[#0A0A0F] border border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left shadow-2xl shadow-indigo-500/20"
                 >
                     <div>
-                        <h4 className="text-xl font-bold mb-1 text-white">Bereit für den Start?</h4>
-                        <p className="text-white/60 text-sm font-medium">Sichere dir jetzt deinen Platz für das nächste Onboarding.</p>
+                        <h4 className="text-xl font-bold mb-1 text-white">Bereit?</h4>
+                        <p className="text-white/60 text-sm font-medium">Dein System kann in 48 Stunden stehen.</p>
                     </div>
-                    <button className="px-8 py-4 bg-white text-[#0A0A0F] font-bold rounded-2xl hover:bg-gray-100 transition-all shadow-xl scale-100 hover:scale-105 active:scale-95 text-sm">
-                        Kostenloses Erstgespräch buchen
-                    </button>
+                    <a href="/#contact" onClick={(e) => smoothScrollTo(e, '/#contact')} className="px-8 py-4 bg-white text-[#0A0A0F] font-bold rounded-2xl hover:bg-gray-100 transition-all shadow-xl scale-100 hover:scale-105 active:scale-95 text-sm">
+                        Jetzt kostenlos anfragen
+                    </a>
                 </motion.div>
             </div>
         </section>

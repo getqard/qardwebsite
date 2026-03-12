@@ -32,16 +32,16 @@ export default function GeofencingSection() {
     }, [isInView]);
 
     return (
-        <section id="geofencing" className="py-10 lg:py-24 text-[#0A0A0F] relative">
+        <section id="geofencing" className="pt-6 pb-10 lg:pt-16 lg:pb-24 text-[#0A0A0F] relative">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
 
                 {/* Visual Map/Radar Mockup (Left on Desktop) */}
-                <div className="order-2 lg:order-1 relative h-[500px] flex items-center justify-center rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-200" ref={containerRef}>
+                <div className="order-2 lg:order-1 relative h-[380px] lg:h-[500px] flex items-center justify-center rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-200" ref={containerRef}>
 
                     {/* Background Map Image */}
                     <div
                         className="absolute inset-0 bg-cover bg-center transition-transform duration-1000"
-                        style={{ backgroundImage: `url('/geofence-map.png')` }}
+                        style={{ backgroundImage: `url('/geofence-map.webp')` }}
                     ></div>
 
                     {/* Darker overlay to make UI elements pop slightly */}
@@ -49,7 +49,7 @@ export default function GeofencingSection() {
 
                     {/* Geofence Zone (Center) */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
-                        <div className="w-[320px] h-[320px] rounded-full border-[2px] border-blue-500/50 bg-blue-500/20 flex items-center justify-center relative shadow-[0_0_40px_rgba(59,130,246,0.15)] backdrop-blur-[1px]">
+                        <div className="w-[280px] h-[280px] lg:w-[320px] lg:h-[320px] rounded-full border-[2px] border-blue-500/50 bg-blue-500/20 flex items-center justify-center relative shadow-[0_0_40px_rgba(59,130,246,0.15)] backdrop-blur-[1px]">
                             {/* Inner Pin / Cafe marker Base */}
                             <div className="w-4 h-4 bg-blue-600 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.9)] border border-white/50 z-10"></div>
 
@@ -131,24 +131,25 @@ export default function GeofencingSection() {
                 {/* Text Content (Right on Desktop) */}
                 <div className="order-1 lg:order-2 max-w-xl relative z-10">
                     <div className="flex items-start gap-4 mb-6">
-                        <div className="inline-flex shrink-0 mt-2 items-center justify-center p-3 bg-indigo-50 text-indigo-600 rounded-2xl shadow-sm border border-indigo-100">
-                            <MapPin size={24} />
+                        <div className="inline-flex shrink-0 mt-2 items-center justify-center p-3 bg-indigo-50 text-indigo-600 rounded-2xl shadow-sm border border-indigo-100 relative">
+                            <MapPin size={32} className="animate-pulse" />
+                            <div className="absolute inset-0 border-2 border-indigo-400 rounded-2xl animate-ping opacity-20"></div>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight">
                             Magische Anziehung.<br /><span className="text-indigo-600">Per GPS.</span>
                         </h2>
                     </div>
                     <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                        Wenn dein Kunde in einem Radius von 100 Metern an deinem Geschäft vorbeiläuft, bekommt er vollautomatisch eine Push-Benachrichtigung auf den Sperrbildschirm.
+                        Dein Kunde läuft an deinem Laden vorbei? Er bekommt automatisch eine Nachricht auf seinem Handy. Perfektes Timing, null Aufwand.
                     </p>
 
                     <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-8 hover:shadow-md transition-shadow">
                         <div className="flex gap-4">
                             <Target className="text-indigo-500 shrink-0 mt-1" size={24} />
                             <div>
-                                <h4 className="font-bold text-gray-900 mb-1 leading-tight">Ortsbasierte Trigger</h4>
+                                <h4 className="font-bold text-gray-900 mb-1 leading-tight">Automatisch im richtigen Moment.</h4>
                                 <p className="text-sm text-gray-600 leading-relaxed">
-                                    Verwandle Laufkundschaft in Spontankäufer. Der Pass erinnert den Kunden genau im richtigen Moment an seine Stempel oder Prämien.
+                                    Laufkundschaft wird zu Stammkundschaft. Sobald jemand in der Nähe ist, holt QARD ihn zu dir rein.
                                 </p>
                             </div>
                         </div>

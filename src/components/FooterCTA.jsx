@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { smoothScrollTo } from '../utils/smoothScroll';
 
 export default function FooterCTA() {
     return (
@@ -50,8 +51,8 @@ export default function FooterCTA() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl xl:text-6xl font-display font-bold mb-6 relative z-10 text-white tracking-tight leading-tight"
                     >
-                        Bereit, deine Kundenbindung <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 via-white to-purple-200">zu revolutionieren?</span>
+                        Deine Kunden warten. <br className="hidden md:block" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 via-white to-purple-200">Hol sie zurück.</span>
                     </motion.h2>
 
                     <motion.p 
@@ -61,7 +62,7 @@ export default function FooterCTA() {
                         viewport={{ once: true }}
                         className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto relative z-10 font-medium"
                     >
-                        Schließe dich hunderten lokalen Unternehmen an, die mit QARD ihren Umsatz steigern. Ohne eigene App, ohne Plastik.
+                        Starte jetzt und bring deine Kunden dazu, immer wieder zu kommen. Ohne App, ohne Aufwand.
                     </motion.p>
                     
                     <motion.div 
@@ -73,7 +74,8 @@ export default function FooterCTA() {
                     >
                         {/* Primary Button with Subtle Action Pulse */}
                         <motion.a
-                            href="/kontakt"
+                            href="/#contact"
+                            onClick={(e) => smoothScrollTo(e, '/#contact')}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             animate={{
@@ -92,18 +94,19 @@ export default function FooterCTA() {
                             }}
                             className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-[#0A0A0F] font-black text-lg transition-all flex items-center justify-center gap-2 relative overflow-hidden group"
                         >
-                            <span className="relative z-10">Kostenlos anfragen</span>
+                            <span className="relative z-10">Jetzt kostenlos anfragen</span>
                             <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                         </motion.a>
                         
                         {/* Secondary Button */}
-                        <motion.a 
+                        <motion.a
                             href="/#pricing"
+                            onClick={(e) => smoothScrollTo(e, '/#pricing')}
                             whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.08)" }}
                             whileTap={{ scale: 0.95 }}
                             className="w-full sm:w-auto px-8 py-4 rounded-full bg-transparent border border-white/20 text-white font-bold text-lg transition-all flex items-center justify-center backdrop-blur-sm"
                         >
-                            Preise entdecken
+                            Preise ansehen
                         </motion.a>
                     </motion.div>
                 </motion.div>

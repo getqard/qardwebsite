@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Settings2, Coffee, Gift, CalendarDays, ArrowRight } from 'lucide-react';
+import { Settings2, Coffee, Gift, CalendarDays } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 
 export default function AutomationsSection() {
@@ -44,7 +44,7 @@ export default function AutomationsSection() {
                         </h2>
                     </div>
                     <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-                        Schalte deinen Umsatz auf Autopilot. Einmal eingerichtet, erkennt QARD automatisch den perfekten Moment, um deine Kunden zurück ins Geschäft zu holen.
+                        Einmal einrichten, QARD macht den Rest. Automatische Nachrichten holen deine Kunden zurück — genau im richtigen Moment.
                     </p>
 
                     <div className="space-y-6">
@@ -53,8 +53,8 @@ export default function AutomationsSection() {
                                 <Coffee size={20} />
                             </div>
                             <div>
-                                <h4 className="font-bold text-gray-900 mb-1">Inaktive Kunden reaktivieren</h4>
-                                <p className="text-sm text-gray-600">Jemand war seit 14 Tagen nicht mehr da? QARD schickt vollautomatisch eine Erinnerung (z.B. "Wir vermissen dich - komm vorbei") direkt auf den Sperrbildschirm.</p>
+                                <h4 className="font-bold text-gray-900 mb-1">Kunden zurückholen</h4>
+                                <p className="text-sm text-gray-600">14 Tage nicht da? QARD schickt automatisch eine Nachricht: "Wir vermissen dich — komm vorbei." Direkt auf den Sperrbildschirm.</p>
                             </div>
                         </div>
 
@@ -64,7 +64,7 @@ export default function AutomationsSection() {
                             </div>
                             <div>
                                 <h4 className="font-bold text-gray-900 mb-1">Am Geburtstag überraschen</h4>
-                                <p className="text-sm text-gray-600">Baue emotionale Bindung auf. Das System gratuliert ganz von alleine und spendiert z.B. einen Gratis-Kaffee zum Ehrentag.</p>
+                                <p className="text-sm text-gray-600">QARD gratuliert automatisch und spendiert z.B. einen Gratis-Kaffee. Emotionale Bindung, null Aufwand.</p>
                             </div>
                         </div>
 
@@ -73,8 +73,8 @@ export default function AutomationsSection() {
                                 <CalendarDays size={20} />
                             </div>
                             <div>
-                                <h4 className="font-bold text-gray-900 mb-1">Wochentags-Automatisierung</h4>
-                                <p className="text-sm text-gray-600">Dein Dienstag ist immer ruhig? QARD kann an bestimmten Wochentagen zu definierten Uhrzeiten z.B. ein leckeres Mittagsmenü pushen, um den Laden zu füllen.</p>
+                                <h4 className="font-bold text-gray-900 mb-1">Schwache Tage füllen</h4>
+                                <p className="text-sm text-gray-600">Dienstag immer leer? QARD pusht z.B. dein Mittagsmenü genau dann, wenn du es brauchst.</p>
                             </div>
                         </div>
                     </div>
@@ -120,11 +120,7 @@ export default function AutomationsSection() {
                                 <Coffee className="text-orange-400 opacity-50 group-hover:opacity-100 transition-opacity" size={24} />
                             </div>
                             <h4 className="text-xl font-bold text-gray-900 mb-1">Inaktivität: 14 Tage</h4>
-                            <p className="text-sm text-gray-500 mb-4">Nachricht an Kunden senden, die seit 14 Tagen inaktiv sind.</p>
-                            <div className="flex items-center gap-2 text-indigo-600 font-medium text-sm">
-                                <span className="group-hover:translate-x-1 transition-transform">Regel ansehen</span>
-                                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
-                            </div>
+                            <p className="text-sm text-gray-500 mb-2">Nachricht an Kunden senden, die seit 14 Tagen inaktiv sind.</p>
                         </motion.div>
 
                         {/* Card 2: Birthday */}
@@ -141,11 +137,7 @@ export default function AutomationsSection() {
                                 <Gift className="text-pink-400 opacity-50 group-hover:opacity-100 transition-opacity" size={24} />
                             </div>
                             <h4 className="text-xl font-bold text-gray-900 mb-1">Happy Birthday!</h4>
-                            <p className="text-sm text-gray-500 mb-4">Gratis-Kaffee am Geburtstag automatisch senden.</p>
-                            <div className="flex items-center gap-2 text-indigo-600 font-medium text-sm">
-                                <span className="group-hover:translate-x-1 transition-transform">Regel ansehen</span>
-                                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
-                            </div>
+                            <p className="text-sm text-gray-500 mb-2">Gratis-Kaffee am Geburtstag automatisch senden.</p>
                         </motion.div>
 
                         {/* Card 3: Slow Days */}
@@ -161,12 +153,8 @@ export default function AutomationsSection() {
                                 </div>
                                 <CalendarDays className="text-blue-400 opacity-50 group-hover:opacity-100 transition-opacity" size={24} />
                             </div>
-                            <h4 className="text-xl font-bold text-gray-900 mb-1">Wochentags-Boost</h4>
-                            <p className="text-sm text-gray-500 mb-4">Mittagsmenü jeden Dienstag von 10-14 Uhr bewerben.</p>
-                            <div className="flex items-center gap-2 text-indigo-600 font-medium text-sm">
-                                <span className="group-hover:translate-x-1 transition-transform">Regel ansehen</span>
-                                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
-                            </div>
+                            <h4 className="text-xl font-bold text-gray-900 mb-1">Schwache Tage füllen</h4>
+                            <p className="text-sm text-gray-500 mb-2">Mittagsmenü jeden Dienstag von 10-14 Uhr bewerben.</p>
                         </motion.div>
 
                     </motion.div>

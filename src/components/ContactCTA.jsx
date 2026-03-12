@@ -88,19 +88,19 @@ export default function ContactCTA() {
                         </div>
 
                         <h2 className="text-5xl md:text-7xl font-display font-bold mb-8 leading-[1.02] tracking-tight">
-                            Bereit für das <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-[length:200%_auto] animate-gradient text-glow-sm">nächste Level?</span>
+                            Klingt gut? <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-[length:200%_auto] animate-gradient text-glow-sm">Lass uns kurz sprechen.</span>
                         </h2>
 
                         <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed max-w-lg font-medium">
-                            Sichere dir jetzt dein kostenloses Erstgespräch. In 5 Minuten zeigen wir dir das volle Potenzial für dein Business.
+                            Wir zeigen dir in einem kurzen Gespräch wie QARD funktioniert, was es für deinen Laden bringen kann und beantworten alle deine Fragen. Unverbindlich.
                         </p>
 
                         <div className="space-y-5">
                             {[
-                                "Individuelle Strategie für dein lokales Geschäft",
-                                "Echte Live-Vorschau deiner digitalen Karten",
-                                "Keine Verkaufs-Show. Reiner Fokus auf dein Wachstum."
+                                "Wir zeigen dir das System live an echten Beispielen",
+                                "Wir erklären dir alles Schritt für Schritt",
+                                "Kein Verkaufsdruck. Nur ehrliche Beratung."
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
@@ -134,7 +134,7 @@ export default function ContactCTA() {
                             {/* Subtle internal gradient overlay */}
                             <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/30 via-transparent to-white pointer-events-none"></div>
 
-                            <h3 className="relative z-10 text-2xl md:text-3xl font-bold mb-8 text-[#0A0A0F] tracking-tight">Erstgespräch anfragen</h3>
+                             <h3 className="relative z-10 text-2xl md:text-3xl font-bold mb-8 text-[#0A0A0F] tracking-tight">Kostenlos beraten lassen</h3>
 
                             <AnimatePresence mode="wait">
                                 {status === 'success' ? (
@@ -211,7 +211,7 @@ export default function ContactCTA() {
                                                     <Loader2 size={22} className="relative z-10 animate-spin" />
                                                 ) : (
                                                     <>
-                                                        <span className="relative z-10">Kostenlos anfragen</span>
+                                                        <span className="relative z-10">Jetzt kostenlos anfragen</span>
                                                         <ArrowRight size={22} className="relative z-10 group-hover:translate-x-1.5 transition-transform" />
                                                     </>
                                                 )}

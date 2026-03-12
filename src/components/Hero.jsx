@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Star, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { smoothScrollTo } from '../utils/smoothScroll';
 import DeviceMockup from './DeviceMockup';
 import WalletPass from './WalletPass';
 
@@ -26,7 +26,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative pt-40 pb-12 lg:pt-48 lg:pb-32 overflow-hidden bg-qard-dark text-white min-h-[90vh] flex items-center">
+        <section className="relative pt-32 pb-12 lg:pt-40 lg:pb-32 overflow-hidden bg-qard-dark text-white min-h-[85vh] flex items-center">
             {/* Dark Navy QARD Gradient Array */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
@@ -42,16 +42,24 @@ export default function Hero() {
                     </h1>
 
                     <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-10 max-w-xl">
-                        Digitale Stempelkarten und Bonusprogramme direkt in Apple & Google Wallet. Ohne App-Download. In Sekunden installiert.
+                        Belohnen. Erreichen. Zurückholen — direkt auf dem Handy deiner Kunden. Keine App. Läuft einfach.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="px-8 py-4.5 rounded-2xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold transition-all shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:scale-105 active:scale-95 text-lg">
-                            Jetzt Demo anfragen
-                        </button>
-                        <button className="px-8 py-4.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold transition-all flex items-center justify-center text-lg">
+                    <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                        <a href="/#contact" onClick={(e) => smoothScrollTo(e, '/#contact')} className="px-8 py-4.5 rounded-2xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold transition-all shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:scale-105 active:scale-95 text-lg flex items-center justify-center">
+                            Jetzt kostenlos anfragen
+                        </a>
+                        <a href="/#how-it-works" onClick={(e) => smoothScrollTo(e, '/#how-it-works')} className="px-8 py-4.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold transition-all flex items-center justify-center text-lg">
                             So funktioniert's
-                        </button>
+                        </a>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] md:text-sm text-white/50 font-medium">
+                        <span className="flex items-center tracking-wide"><span className="text-emerald-400 mr-1.5">✓</span> Monatlich kündbar</span>
+                        <span className="hidden sm:inline text-white/30">·</span>
+                        <span className="flex items-center tracking-wide"><span className="text-emerald-400 mr-1.5">✓</span> 100% DSGVO-konform</span>
+                        <span className="hidden sm:inline text-white/30">·</span>
+                        <span className="flex items-center tracking-wide"><span className="text-emerald-400 mr-1.5">✓</span> In wenigen Tagen startklar</span>
                     </div>
                 </div>
 
@@ -73,7 +81,7 @@ export default function Hero() {
                                 {/* 1. Wallet Pass Background */}
                                 <div className="w-full h-full bg-[#111] relative">
                                     <img
-                                        src="/wallet-pass.png"
+                                        src="/wallet-pass.webp"
                                         alt="Original Berliner Döner Wallet Pass"
                                         className="w-full h-full object-cover object-top"
                                         onError={(e) => {
@@ -83,7 +91,7 @@ export default function Hero() {
                                     />
                                     <div className="hidden absolute inset-0 flex-col items-center justify-center p-6 text-center bg-zinc-900 border border-white/5">
                                         <span className="text-4xl mb-3">🎟️</span>
-                                        <span className="text-white/60 font-semibold text-sm">wallet-pass.png fehlt</span>
+                                        <span className="text-white/60 font-semibold text-sm">wallet-pass.webp fehlt</span>
                                         <span className="text-white/40 mt-1 text-xs">Bitte Bild im /public Ordner ablegen.</span>
                                     </div>
                                 </div>
@@ -106,7 +114,7 @@ export default function Hero() {
                                                 {/* App Icon / Logo */}
                                                 <div className="w-[34px] h-[34px] rounded-[8px] bg-black shrink-0 flex items-center justify-center shadow-[inset_0_1px_4px_rgba(0,0,0,0.3)] relative overflow-hidden mt-0.5">
                                                     <img
-                                                        src="/doener-logo.png"
+                                                        src="/doener-logo.webp"
                                                         alt="Logo"
                                                         className="absolute inset-0 w-full h-full object-contain p-[1px] rounded-[8px]"
                                                         onError={(e) => {

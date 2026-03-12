@@ -37,12 +37,12 @@ export default function BonusReviews() {
                                 Und nebenbei sammelt QARD <br className="hidden md:block" />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-600">
                                     Google-Bewertungen
-                                </span> für dich.
+                                </span> <br className="hidden lg:block" /> für dich.
                             </h2>
                             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                                Der perfekte Moment für Feedback ist direkt nach der erfolgreichen Installation. Dein Kunde hat die Karte im Wallet und wird völlig nahtlos gefragt, ob er dich bewerten möchte.
+                                Dein Kunde speichert die Karte — und wird direkt gefragt, ob er dich bewerten möchte. Genau im richtigen Moment, völlig automatisch.
                                 <br /><br />
-                                <strong className="text-gray-900">Das Resultat:</strong> Mehr Sichtbarkeit, mehr Vertrauen und 5-Sterne Bewertungen auf Autopilot.
+                                <strong className="text-gray-900">Das Resultat:</strong> Mehr Google-Bewertungen, besseres Ranking, neue Kunden — ohne dass du jemals danach fragen musst.
                             </p>
                         </motion.div>
                     </div>
@@ -106,64 +106,70 @@ export default function BonusReviews() {
                                     </motion.p>
                                 </div>
 
-                                {/* Golden Stars Display */}
-                                <div className="flex gap-2.5 mb-8">
-                                    {[1, 2, 3, 4, 5].map((i) => (
-                                        <motion.div
-                                            key={i}
-                                            initial={{ scale: 0, opacity: 0 }}
-                                            whileInView={{ scale: 1, opacity: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: 0.7 + (i * 0.1), type: "spring", stiffness: 300 }}
-                                        >
-                                            <div className="relative">
-                                                <Star className="text-yellow-400 w-11 h-11 drop-shadow-[0_2px_10px_rgba(250,204,21,0.5)]" fill="currentColor" strokeWidth={0} />
-                                                <Star className="absolute top-[1.5px] left-[1.5px] text-yellow-500/30 w-11 h-11" fill="currentColor" strokeWidth={0} />
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
+
 
                                 {/* The "One second more" prompt */}
-                                <div className="w-full flex flex-col items-center bg-gray-50/50 rounded-3xl p-8 border border-gray-100">
+                                <motion.div 
+                                    className="w-full flex flex-col items-center bg-green-50/30 rounded-3xl p-6 lg:p-8 border-2 border-green-500/30 relative"
+                                    initial={{ scale: 0.95, opacity: 0 }}
+                                    whileInView={{ scale: 1, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: 0.8 }}
+                                >
+                                    {/* Green Pulsating Border Animation */}
+                                    <motion.div 
+                                        className="absolute -inset-[2px] rounded-3xl border-2 border-green-500/50 -z-10"
+                                        animate={{ scale: [1, 1.05, 1], opacity: [0.5, 0, 0.5] }}
+                                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                    />
+
                                     <motion.h4
-                                        className="font-bold text-gray-900 text-[22px] mb-2"
+                                        className="font-bold text-gray-900 text-[20px] lg:text-[22px] mb-1"
                                         initial={{ opacity: 0, y: 10 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
-                                        transition={{ duration: 0.5, delay: 1.3 }}
+                                        transition={{ duration: 0.5, delay: 1.1 }}
                                     >
                                         Eine Sekunde noch?
                                     </motion.h4>
                                     <motion.p
-                                        className="text-gray-500 text-sm mb-8 text-center"
+                                        className="text-gray-500 text-sm mb-6 text-center"
                                         initial={{ opacity: 0 }}
                                         whileInView={{ opacity: 1 }}
                                         viewport={{ once: true }}
-                                        transition={{ duration: 0.5, delay: 1.4 }}
+                                        transition={{ duration: 0.5, delay: 1.2 }}
                                     >
                                         Dein Feedback bedeutet uns die Welt! <span className="text-green-500">💚</span>
                                     </motion.p>
 
-                                    {/* Large Interactive Call-to-Action Stars */}
-                                    <motion.div
-                                        className="flex gap-4"
-                                        initial={{ opacity: 0, y: 10 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.5, delay: 1.6 }}
-                                    >
+                                    {/* Large Interactive Star Animation - Now auto-filling */}
+                                    <div className="flex gap-3 lg:gap-4">
                                         {[1, 2, 3, 4, 5].map((i) => (
-                                            <motion.div
-                                                key={`empty-${i}`}
-                                                whileHover={{ scale: 1.25, color: "#facc15", rotate: [0, -10, 10, 0] }}
-                                                className="cursor-pointer text-gray-200 transition-colors duration-200"
-                                            >
-                                                <Star className="w-14 h-14" strokeWidth={1.5} />
-                                            </motion.div>
+                                            <div key={`star-${i}`} className="relative">
+                                                <Star className="w-10 h-10 lg:w-12 lg:h-12 text-gray-200" strokeWidth={1.5} />
+                                                <motion.div
+                                                    className="absolute inset-0 text-yellow-400"
+                                                    initial={{ scale: 0, opacity: 0 }}
+                                                    whileInView={{
+                                                        scale: [0, 1],
+                                                        opacity: [0, 1],
+                                                    }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ 
+                                                        delay: 1.5 + (i * 0.15), 
+                                                        duration: 0.5,
+                                                        repeat: Infinity,
+                                                        repeatType: "loop",
+                                                        repeatDelay: 4,
+                                                        ease: "easeOut"
+                                                    }}
+                                                >
+                                                    <Star className="w-10 h-10 lg:w-12 lg:h-12 drop-shadow-[0_0_10px_rgba(250,204,21,0.4)]" fill="currentColor" strokeWidth={0} />
+                                                </motion.div>
+                                            </div>
                                         ))}
-                                    </motion.div>
-                                </div>
+                                    </div>
+                                </motion.div>
 
                                 <motion.p
                                     className="text-gray-400 text-xs mt-10 tracking-widest uppercase font-semibold"
@@ -177,16 +183,7 @@ export default function BonusReviews() {
                             </div>
                         </motion.div>
 
-                        {/* Decorative Large Google G Logo */}
-                        <motion.div
-                            className="absolute -right-16 -bottom-10 w-32 h-32 bg-white rounded-3xl flex items-center justify-center shadow-2xl border border-gray-100 z-20 pointer-events-none transform rotate-[15deg]"
-                            initial={{ opacity: 0, scale: 0, rotate: -30 }}
-                            whileInView={{ opacity: 1, scale: 1, rotate: 15 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.7, delay: 1.1, type: "spring" }}
-                        >
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" className="w-16 h-16" />
-                        </motion.div>
+
 
                     </div>
 

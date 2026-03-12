@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, X, Wallet, BarChart3, Target, Zap, ShieldCheck } from 'lucide-react';
+import { smoothScrollTo } from '../utils/smoothScroll';
 
 const FeatureCategory = ({ title, icon: Icon, features }) => (
     <div className="space-y-6">
@@ -41,15 +42,15 @@ const FeatureModal = ({ isOpen, onClose }) => {
 
     const categories = [
         {
-            title: "Wallet Integration",
+            title: "Kundenkarten",
             icon: Wallet,
             features: [
-                { name: "Apple Wallet & Google Wallet", desc: "Native Integration ohne App-Download." },
+                { name: "Apple & Google Wallet", desc: "Zwei Systeme, eine Lösung." },
                 { name: "Individuelle Karten-Gestaltung", desc: "Look & Feel deiner Marke." },
                 { name: "Standort-Benachrichtigungen", desc: "Automatischer Push bei Annäherung." },
                 { name: "Echtzeit-Aktualisierung", desc: "Stempel & Prämien sofort sichtbar." },
                 { name: "Flexible Kartentypen", desc: "Stempel-, VIP- oder Punktekarte." },
-                { name: "Smart-Link & QR-Code", desc: "Ein Code für alle Geräte." }
+                { name: "Ein Link & QR-Code für alles", desc: "Ein Code für alle Geräte." }
             ]
         },
         {
@@ -58,10 +59,10 @@ const FeatureModal = ({ isOpen, onClose }) => {
             features: [
                 { name: "Echtzeit-Dashboard", desc: "Alle Kennzahlen auf einen Blick." },
                 { name: "Kampagnen-Statistiken", desc: "Detaillierte Auswertung von Scans." },
-                { name: "Kundenstatus-Erkennung", desc: "Churn-Prävention & Segmentierung." },
-                { name: "Bewertungs-Management", desc: "Google Feedback Loop." },
+                { name: "Erkenne wer abspringt", desc: "Inaktive Kunden gezielt ansprechen." },
+                { name: "Bewertungs-Management", desc: "Automatisch Google-Bewertungen sammeln." },
                 { name: "Daten-Export", desc: "CSV/PDF für Steuerberater." },
-                { name: "Live-Aktivitätsfeed", desc: "Alle Transaktionen in Echtzeit." }
+                { name: "Live sehen was passiert", desc: "Alle Transaktionen in Echtzeit." }
             ]
         },
         {
@@ -70,9 +71,9 @@ const FeatureModal = ({ isOpen, onClose }) => {
             features: [
                 { name: "Push-Nachrichten", desc: "Angebote direkt aufs Display." },
                 { name: "Professionelles Design", desc: "Poster, Flyer & Aufsteller inkl." },
-                { name: "Individuelles Onboarding", desc: "Markengerechte Registrierung." },
+                { name: "Einrichtung in deinem Design", desc: "Markengerechte Registrierung." },
                 { name: "Personalisierte Daten", desc: "Namen & Geburtstage erfassen." },
-                { name: "Geschenk-System", desc: "Belohnung bei Meilensteinen." },
+                { name: "Kunden automatisch belohnen", desc: "Belohnung bei Meilensteinen." },
                 { name: "Bewertungen sammeln", desc: "Automatisch mehr Google-Reviews." }
             ]
         },
@@ -93,7 +94,7 @@ const FeatureModal = ({ isOpen, onClose }) => {
             icon: ShieldCheck,
             features: [
                 { name: "Mitarbeiter-Scanner-App", desc: "PIN-Schutz & Rollensystem." },
-                { name: "DSGVO-Konformität", desc: "Rechtssichere Einwilligung." },
+                { name: "100% DSGVO-konform", desc: "Rechtssichere Einwilligung." },
                 { name: "Push-Limits", desc: "Anti-Spam Schutz für Kunden." },
                 { name: "Multi-Standort", desc: "Zentral steuerbare Filialen." },
                 { name: "Digitales Onboarding", desc: "Reibungsloser Startprozess." }
@@ -122,10 +123,11 @@ const FeatureModal = ({ isOpen, onClose }) => {
                                     <h3 className="text-3xl md:text-5xl lg:text-5xl font-display font-bold text-white mb-2 leading-tight pr-12 md:pr-0">
                                         Alle Features. <span className="text-indigo-400 font-black">Keine Kompromisse.</span>
                                     </h3>
-                                    <p className="text-white/40 text-sm md:text-lg">Die komplette Tool-Suite für deinen digitalen Erfolg.</p>
+                                    <p className="text-white/40 text-sm md:text-lg">Alles was du brauchst. In einem System.</p>
                                 </div>
                                 <button
                                     onClick={onClose}
+                                    aria-label="Schließen"
                                     className="absolute right-6 top-6 md:relative md:right-auto md:top-auto group p-3 md:p-4 bg-white/5 hover:bg-white/10 rounded-xl md:rounded-2xl text-white transition-all border border-white/10 hover:border-white/20"
                                 >
                                     <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
@@ -221,22 +223,31 @@ export default function Pricing() {
                                     </div>
                                 </div>
                                 <div className="text-right">
-                                    <div className="flex items-baseline gap-2">
+                                    <div className="flex items-baseline justify-end gap-2">
                                         <span className="text-7xl font-display font-black">99€</span>
                                         <span className="text-white/40 text-xl">/Monat</span>
                                     </div>
                                     <p className="text-white/30 text-sm mt-1 font-medium">Netto zzgl. MwSt.</p>
+                                    <motion.div 
+                                        className="mt-4 text-indigo-400 font-bold text-sm bg-indigo-500/10 py-2 px-4 rounded-xl border border-indigo-500/20 inline-block"
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        Das sind gut 3€ am Tag. <br className="hidden sm:block" />
+                                        Weniger als ein Cappuccino.
+                                    </motion.div>
                                 </div>
                             </div>
 
                             <div className="grid sm:grid-cols-2 gap-6 mb-12">
                                 {[
-                                    "Alle 29+ Kern-Features",
-                                    "Monatlich kündbar",
-                                    "Unbegrenzte Push-Nachrichten",
-                                    "Unbegrenzte Wallet-Karten",
-                                    "Inklusive Werbematerial-Designs",
-                                    "DSGVO-Sorglos-Paket"
+                                    "Alle Features inklusive",
+                                    "Unbegrenzt Kunden erreichen",
+                                    "Unbegrenzt Kundenkarten",
+                                    "Aufsteller & Werbematerial inklusive",
+                                    "100% DSGVO-konform",
+                                    "Monatlich kündbar"
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-3 items-center">
                                         <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
@@ -248,21 +259,21 @@ export default function Pricing() {
                             </div>
 
                             <div className="flex flex-col gap-4">
-                                <button className="w-full py-6 rounded-2xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold transition-all shadow-[0_20px_40px_rgba(99,102,241,0.3)] text-xl flex items-center justify-center gap-3">
-                                    Jetzt unverbindlich anfragen
-                                </button>
+                                <a href="/#contact" onClick={(e) => smoothScrollTo(e, '/#contact')} className="w-full py-6 rounded-2xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold transition-all shadow-[0_20px_40px_rgba(99,102,241,0.3)] text-xl flex items-center justify-center gap-3">
+                                    Jetzt kostenlos anfragen
+                                </a>
 
                                 <button
                                     onClick={() => setIsModalOpen(true)}
                                     className="w-full py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-white/70 font-bold transition-all border border-white/5 text-sm uppercase tracking-widest flex items-center justify-center gap-2"
                                 >
-                                    Alle 29+ Features ansehen
+                                    Alle Features ansehen
                                 </button>
                             </div>
 
                             <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm font-medium">
                                 <div className="text-white/40">
-                                    <span className="text-white">Setup-Gebühr:</span> 199€ einmalig
+                                    <span className="text-white">Setup-Gebühr:</span> 199€ einmalig — inkl. persönlichem Onboarding & fertigem Werbematerial
                                 </div>
                                 <div className="text-indigo-400">
                                     Kündbar ohne Mindestlaufzeit
@@ -272,9 +283,6 @@ export default function Pricing() {
                     </motion.div>
                 </div>
 
-                <div className="text-center mt-12 text-white/30 font-medium italic">
-                    "Das sind gut 3€ am Tag. Weniger als ein Cappuccino."
-                </div>
             </div>
 
             <FeatureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

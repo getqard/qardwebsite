@@ -26,18 +26,18 @@ const HomePage = () => (
         <Hero />
 
         {/* Unified Light Block: Features */}
-        <div className="bg-white relative overflow-hidden">
+        <div className="bg-white relative overflow-clip">
             {/* Subtle Gradient Background Overlay */}
             <div className="absolute inset-0 bg-gradient-to-bl from-[rgba(255,0,212,0.12)] via-[rgba(255,255,255,0)] to-[rgba(0,163,255,0.12)] pointer-events-none mix-blend-multiply" />
 
-            
+
             <PushSection />
             <GeofencingSection />
             <AutomationsSection />
         </div>
 
         {/* Unified Dark Block 1 */}
-        <div className="bg-qard-dark relative overflow-hidden">
+        <div className="bg-qard-dark relative overflow-clip">
             {/* Section 5: Realtime Dashboard */}
             <DashboardSection />
 

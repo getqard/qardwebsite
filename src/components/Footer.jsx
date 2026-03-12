@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { smoothScrollTo } from '../utils/smoothScroll';
 
 export default function Footer() {
     const scrollToTop = () => {
@@ -27,7 +28,7 @@ export default function Footer() {
                             <img src="/LOGO_QARD_Master-02.svg" alt="QARD Logo" className="h-8 w-auto" />
                         </Link>
                         <p className="text-white/40 text-[15px] mb-6 leading-relaxed max-w-sm">
-                            Die smarte Plattform für nachhaltige Kundenbindung. Verwandeln Sie Laufkundschaft in echte Fans – einfach, digital und messbar.
+                            Die smarte Plattform für nachhaltige Kundenbindung. Verwandle Laufkundschaft in echte Stammkunden — einfach, digital und messbar.
                         </p>
                         
                         {/* Social & Contact Cluster - Inline Layout */}
@@ -54,20 +55,22 @@ export default function Footer() {
 
                     {/* Navigation Columns */}
                     <div className="md:col-span-4 lg:col-span-3 lg:col-start-6">
-                        <h4 className="font-black mb-5 text-white text-[11px] uppercase tracking-[0.25em] opacity-90">Lösung</h4>
+                        <h4 className="font-black mb-5 text-white text-[11px] uppercase tracking-[0.25em] opacity-90">Features</h4>
                         <ul className="space-y-3 text-[15px] text-white/35 font-medium">
-                            <li><a href="/#push-marketing" className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Push Marketing</a></li>
-                            <li><a href="/#geofencing" className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Geofencing</a></li>
-                            <li><a href="/#dashboard" className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Kommandozentrale</a></li>
-                            <li><a href="/#google-reviews" className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Google Bewertungen</a></li>
+                            <li><a href="/#push-marketing" onClick={(e) => smoothScrollTo(e, '/#push-marketing')} className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Push-Nachrichten</a></li>
+                            <li><a href="/#geofencing" onClick={(e) => smoothScrollTo(e, '/#geofencing')} className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>GPS-Nachrichten</a></li>
+                            <li><a href="/#dashboard" onClick={(e) => smoothScrollTo(e, '/#dashboard')} className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Dashboard</a></li>
+                            <li><a href="/#google-reviews" onClick={(e) => smoothScrollTo(e, '/#google-reviews')} className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Google-Bewertungen</a></li>
                         </ul>
                     </div>
 
                     <div className="md:col-span-4 lg:col-span-2">
-                        <h4 className="font-black mb-5 text-white text-[11px] uppercase tracking-[0.25em] opacity-90">Support</h4>
+                        <h4 className="font-black mb-5 text-white text-[11px] uppercase tracking-[0.25em] opacity-90">Navigation</h4>
                         <ul className="space-y-3 text-[15px] text-white/35 font-medium">
-                            <li><a href="/#pricing" className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Preise</a></li>
-                            <li><Link to="/kontakt" onClick={scrollToTop} className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Kontakt</Link></li>
+                            <li><a href="/#push-marketing" onClick={(e) => smoothScrollTo(e, '/#push-marketing')} className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Funktionen</a></li>
+                            <li><a href="/#how-it-works" onClick={(e) => smoothScrollTo(e, '/#how-it-works')} className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>So funktioniert's</a></li>
+                            <li><a href="/#pricing" onClick={(e) => smoothScrollTo(e, '/#pricing')} className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Preise</a></li>
+                            <li><a href="/#contact" onClick={(e) => smoothScrollTo(e, '/#contact')} className="hover:text-white transition-colors flex items-center gap-3 group"><span className="w-1 h-1 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-all"></span>Kontakt</a></li>
                         </ul>
                     </div>
 
