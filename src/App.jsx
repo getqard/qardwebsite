@@ -26,7 +26,7 @@ const HomePage = () => (
         <Hero />
 
         {/* Unified Light Block: Features */}
-        <div className="bg-white relative overflow-clip">
+        <div className="bg-white relative overflow-clip" style={{ contain: 'layout style paint', contentVisibility: 'auto', containIntrinsicSize: 'auto 2400px' }}>
             {/* Subtle Gradient Background Overlay */}
             <div className="absolute inset-0 bg-gradient-to-bl from-[rgba(255,0,212,0.12)] via-[rgba(255,255,255,0)] to-[rgba(0,163,255,0.12)] pointer-events-none mix-blend-multiply" />
 
@@ -37,7 +37,7 @@ const HomePage = () => (
         </div>
 
         {/* Unified Dark Block 1 */}
-        <div className="bg-qard-dark relative overflow-clip">
+        <div className="bg-qard-dark relative overflow-clip" style={{ contain: 'layout style paint', contentVisibility: 'auto', containIntrinsicSize: 'auto 2000px' }}>
             {/* Section 5: Realtime Dashboard */}
             <DashboardSection />
 
@@ -46,24 +46,30 @@ const HomePage = () => (
         </div>
 
         {/* Unified Light Block: Reviews & Industry */}
-        <div className="bg-white">
+        <div className="bg-white" style={{ contain: 'layout style paint', contentVisibility: 'auto', containIntrinsicSize: 'auto 1200px' }}>
             <BonusReviews />
             <TargetAudience />
         </div>
 
         {/* Unified Dark Block 2: Pricing */}
-        <div className="bg-qard-dark relative overflow-hidden">
+        <div className="bg-qard-dark relative overflow-hidden" style={{ contain: 'layout style paint', contentVisibility: 'auto', containIntrinsicSize: 'auto 800px' }}>
             <Pricing />
         </div>
 
         {/* Section 10: Deliverables (Light) */}
-        <Deliverables />
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 800px' }}>
+            <Deliverables />
+        </div>
 
         {/* Section 11: Contact Form (Light) */}
-        <ContactCTA />
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 600px' }}>
+            <ContactCTA />
+        </div>
 
         {/* Section 12: Main Footer CTA (Dark) */}
-        <FooterCTA />
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 500px' }}>
+            <FooterCTA />
+        </div>
     </>
 );
 

@@ -76,6 +76,7 @@ export default function Hero() {
                             animate={{ y: [0, -15, 0] }}
                             transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
                             className="w-full max-w-[320px] lg:max-w-[340px]"
+                            style={{ willChange: 'transform' }}
                         >
                             <DeviceMockup className="w-full">
                                 {/* 1. Wallet Pass Background */}

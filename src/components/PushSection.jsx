@@ -87,7 +87,7 @@ export default function PushSection() {
 
             {/* Phone scroll area — this drives the scroll-linked animation */}
             <div ref={scrollAreaRef} className="h-[200vh] lg:h-auto relative">
-                <div className="sticky top-0 h-screen lg:relative lg:h-auto flex items-center overflow-visible">
+                <div className="sticky top-0 h-screen lg:relative lg:h-auto flex items-center overflow-visible" style={{ willChange: 'transform' }}>
                     <div className="w-full lg:py-12">
                         <div className="max-w-7xl mx-auto px-6 w-full lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
                             {/* Desktop: text on the left */}

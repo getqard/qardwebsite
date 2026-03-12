@@ -336,3 +336,10 @@
         scrollbar-width: none;
     }
 }
+
+/* GPU Layer Promotion for fixed/sticky elements with backdrop-blur */
+nav[class*="fixed"],
+.fixed[class*="backdrop-blur"],
+.sticky[class*="backdrop-blur"] {
+    will-change: transform;
+}

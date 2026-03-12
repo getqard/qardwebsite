@@ -82,7 +82,7 @@ export default function DashboardSection() {
                 <div className="w-full lg:w-full rounded-[20px] md:rounded-[24px] border border-white/5 bg-[#08080A]/90 backdrop-blur-3xl overflow-hidden shadow-[10px_20px_50px_rgba(0,0,0,0.8)] md:shadow-[20px_40px_80px_rgba(0,0,0,0.8)] flex flex-col">
                 <motion.div
                     className="w-full h-full flex flex-col"
-                    style={{ rotateY: 8, rotateX: 5, z: 100 }}
+                    style={{ rotateY: 8, rotateX: 5, z: 100, willChange: 'transform', backfaceVisibility: 'hidden' }}
                     initial={{ rotateY: 15, rotateX: 10, opacity: 0, scale: 0.9 }}
                     animate={graphicInView ? { rotateY: 8, rotateX: 5, opacity: 1, scale: 1 } : { rotateY: 15, rotateX: 10, opacity: 0, scale: 0.9 }}
                     transition={{ duration: 1, ease: "easeOut" }}

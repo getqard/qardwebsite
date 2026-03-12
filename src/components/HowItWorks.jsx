@@ -51,12 +51,11 @@ const steps = [
     }
 ];
 
-const InteractiveMockups = ({ id, activeStep, activeData }) => (
+const InteractiveMockups = React.memo(({ id, activeStep, activeData }) => (
     <div className="relative w-[300px] h-[300px] lg:w-full lg:max-w-[450px] lg:aspect-square pointer-events-auto">
         {/* Animated Background Glow */}
         <motion.div
             className={`absolute inset-0 rounded-full blur-[80px] lg:blur-[100px] transition-colors duration-700 ${activeData.bgColor.replace('/10', '/20')}`}
-            layoutId={`glow-${id}`}
         />
 
         {/* Feature Display Box */}
@@ -78,9 +77,10 @@ const InteractiveMockups = ({ id, activeStep, activeData }) => (
                                 {[0, 1, 2].map((i) => (
                                     <motion.div
                                         key={`nfc-ripple-${i}`}
-                                        className="absolute bottom-0 right-0 rounded-tl-full border-t-[3px] border-l-[3px] border-white/80 pointer-events-none translate-x-[2px] translate-y-[2px]"
-                                        initial={{ width: 10, height: 10, opacity: 0 }}
-                                        animate={{ width: 80, height: 80, opacity: [0, 0.8, 0] }}
+                                        className="absolute bottom-0 right-0 w-[10px] h-[10px] rounded-tl-full border-t-[3px] border-l-[3px] border-white/80 pointer-events-none translate-x-[2px] translate-y-[2px]"
+                                        style={{ willChange: 'transform, opacity' }}
+                                        initial={{ scale: 1, opacity: 0 }}
+                                        animate={{ scale: 8, opacity: [0, 0.8, 0] }}
                                         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: i * 2 }}
                                     />
                                 ))}
@@ -126,7 +126,7 @@ const InteractiveMockups = ({ id, activeStep, activeData }) => (
                                 <div className="w-full h-full relative">
                                     <img src="/scannprozess.webp" alt="Scan Process" className="w-full h-full object-cover object-[center_30%] opacity-90 rounded-[1.6rem] lg:rounded-[2rem]" />
                                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/40 to-black/80"></div>
-                                    <motion.div className="absolute left-0 w-full h-[2px] lg:h-[3px] bg-green-400 shadow-[0_0_30px_rgba(74,222,128,1)] z-20" initial={{ top: "20%" }} animate={{ top: ["20%", "80%", "20%"] }} transition={{ duration: 3, ease: "linear", repeat: Infinity }} />
+                                    <motion.div className="absolute left-0 w-full h-[2px] lg:h-[3px] bg-green-400 shadow-[0_0_30px_rgba(74,222,128,1)] z-20" style={{ top: "20%", willChange: 'transform' }} animate={{ y: ["0%", "300%", "0%"] }} transition={{ duration: 3, ease: "linear", repeat: Infinity }} />
                                     <motion.div
                                         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] bg-white/95 backdrop-blur-2xl border border-white/50 rounded-2xl p-4 lg:p-5 flex flex-col items-center shadow-[0_30px_60px_rgba(0,0,0,0.6)] z-30 min-w-[120px] lg:min-w-[160px]"
                                         initial={{ scale: 0.5, opacity: 0 }}
@@ -218,12 +218,13 @@ const InteractiveMockups = ({ id, activeStep, activeData }) => (
             </AnimatePresence>
         </div>
     </div>
-);
+));
 
 export default function HowItWorks() {
     const stepsContainerRef = useRef(null);
     const stepsAreaRef = useRef(null);
     const stepRefs = useRef([]);
+    const activeStepRef = useRef(0);
     const [activeStep, setActiveStep] = useState(0);
     const [mobileVisible, setMobileVisible] = useState(false);
 
@@ -257,7 +258,10 @@ export default function HowItWorks() {
                 }
             });
 
-            setActiveStep(closestStep);
+            if (closestStep !== activeStepRef.current) {
+                activeStepRef.current = closestStep;
+                setActiveStep(closestStep);
+            }
         };
 
         let ticking = false;
@@ -364,6 +368,7 @@ export default function HowItWorks() {
                 {mobileVisible && (
                     <motion.div
                         className="lg:hidden fixed bottom-6 left-0 right-0 z-40 flex justify-center pointer-events-none px-4"
+                        style={{ willChange: 'transform' }}
                         initial={{ opacity: 0, y: 80 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 60, scale: 0.95 }}
