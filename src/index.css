@@ -337,6 +337,11 @@
     }
 }
 
+/* Scroll offset for navbar on anchor targets */
+[id] {
+    scroll-margin-top: 5rem;
+}
+
 /* GPU Layer Promotion for fixed/sticky elements with backdrop-blur */
 nav[class*="fixed"],
 .fixed[class*="backdrop-blur"],

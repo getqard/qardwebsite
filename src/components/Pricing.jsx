@@ -259,7 +259,7 @@ export default function Pricing() {
                             </div>
 
                             <div className="flex flex-col gap-4">
-                                <a href="/#contact" onClick={(e) => smoothScrollTo(e, '/#contact')} className="w-full py-6 rounded-2xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold transition-all shadow-[0_20px_40px_rgba(99,102,241,0.3)] text-xl flex items-center justify-center gap-3">
+                                <a href="/#contact-form" onClick={(e) => smoothScrollTo(e, '/#contact-form')} className="w-full py-6 rounded-2xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold transition-all shadow-[0_20px_40px_rgba(99,102,241,0.3)] text-xl flex items-center justify-center gap-3">
                                     Jetzt kostenlos anfragen
                                 </a>
 

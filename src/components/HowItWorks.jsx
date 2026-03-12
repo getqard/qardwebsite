@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { QrCode, Smartphone, Sparkles, Gift, Bell } from 'lucide-react';
 
@@ -363,21 +364,24 @@ export default function HowItWorks() {
                 </div>
             </div>
 
-            {/* Mobile: Fixed bottom overlay */}
-            <AnimatePresence>
-                {mobileVisible && (
-                    <motion.div
-                        className="lg:hidden fixed bottom-6 left-0 right-0 z-40 flex justify-center pointer-events-none px-4"
-                        style={{ willChange: 'transform' }}
-                        initial={{ opacity: 0, y: 80 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 60, scale: 0.95 }}
-                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                    >
-                        <InteractiveMockups id="mobile" activeStep={activeStep} activeData={activeData} />
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {/* Mobile: Fixed bottom overlay — rendered via portal to escape contain:layout */}
+            {createPortal(
+                <AnimatePresence>
+                    {mobileVisible && (
+                        <motion.div
+                            className="lg:hidden fixed bottom-6 left-0 right-0 z-40 flex justify-center pointer-events-none px-4"
+                            style={{ willChange: 'transform' }}
+                            initial={{ opacity: 0, y: 80 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 60, scale: 0.95 }}
+                            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                        >
+                            <InteractiveMockups id="mobile" activeStep={activeStep} activeData={activeData} />
+                        </motion.div>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
         </section>
     );
 }

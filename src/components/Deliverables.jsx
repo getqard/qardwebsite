@@ -102,7 +102,7 @@ export default function Deliverables() {
                         <h4 className="text-xl font-bold mb-1 text-white">Bereit?</h4>
                         <p className="text-white/60 text-sm font-medium">Dein System kann in 48 Stunden stehen.</p>
                     </div>
-                    <a href="/#contact" onClick={(e) => smoothScrollTo(e, '/#contact')} className="px-8 py-4 bg-white text-[#0A0A0F] font-bold rounded-2xl hover:bg-gray-100 transition-all shadow-xl scale-100 hover:scale-105 active:scale-95 text-sm">
+                    <a href="/#contact-form" onClick={(e) => smoothScrollTo(e, '/#contact-form')} className="px-8 py-4 bg-white text-[#0A0A0F] font-bold rounded-2xl hover:bg-gray-100 transition-all shadow-xl scale-100 hover:scale-105 active:scale-95 text-sm">
                         Jetzt kostenlos anfragen
                     </a>
                 </motion.div>

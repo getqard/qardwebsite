@@ -131,7 +131,7 @@ export default function ContactCTA() {
                         {/* Glow Effect behind form */}
                         <div className="absolute -inset-6 bg-gradient-to-tr from-indigo-500/10 via-purple-500/5 to-indigo-500/10 rounded-[4rem] blur-3xl opacity-60"></div>
 
-                        <div className="relative bg-white/90 border border-indigo-50/50 p-8 md:p-12 rounded-[3.5rem] shadow-[0_40px_100px_rgba(0,0,0,0.06),0_10px_20px_rgba(79,70,229,0.03)] backdrop-blur-xl overflow-hidden group">
+                        <div id="contact-form" className="relative bg-white/90 border border-indigo-50/50 p-8 md:p-12 rounded-[3.5rem] shadow-[0_40px_100px_rgba(0,0,0,0.06),0_10px_20px_rgba(79,70,229,0.03)] backdrop-blur-xl overflow-hidden group">
                             {/* Subtle internal gradient overlay */}
                             <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/30 via-transparent to-white pointer-events-none"></div>
 

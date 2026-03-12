@@ -74,8 +74,8 @@ export default function FooterCTA() {
                     >
                         {/* Primary Button with Subtle Action Pulse */}
                         <motion.a
-                            href="/#contact"
-                            onClick={(e) => smoothScrollTo(e, '/#contact')}
+                            href="/#contact-form"
+                            onClick={(e) => smoothScrollTo(e, '/#contact-form')}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             animate={{

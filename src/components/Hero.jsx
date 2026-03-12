@@ -46,7 +46,7 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                        <a href="/#contact" onClick={(e) => smoothScrollTo(e, '/#contact')} className="px-8 py-4.5 rounded-2xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold transition-all shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:scale-105 active:scale-95 text-lg flex items-center justify-center">
+                        <a href="/#contact-form" onClick={(e) => smoothScrollTo(e, '/#contact-form')} className="px-8 py-4.5 rounded-2xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold transition-all shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:scale-105 active:scale-95 text-lg flex items-center justify-center">
                             Jetzt kostenlos anfragen
                         </a>
                         <a href="/#how-it-works" onClick={(e) => smoothScrollTo(e, '/#how-it-works')} className="px-8 py-4.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold transition-all flex items-center justify-center text-lg">

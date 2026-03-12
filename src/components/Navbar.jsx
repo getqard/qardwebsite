@@ -53,7 +53,7 @@ export default function Navbar() {
                         </a>
                     ))}
                     <div className="w-px h-4 bg-white/10 mx-2"></div>
-                    <a href="/#contact" onClick={(e) => handleNavClick(e, '/#contact')} className="px-5 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-600 active:scale-95 text-white text-sm font-bold transition-all shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/50">
+                    <a href="/#contact-form" onClick={(e) => handleNavClick(e, '/#contact-form')} className="px-5 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-600 active:scale-95 text-white text-sm font-bold transition-all shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/50">
                         Jetzt kostenlos anfragen
                     </a>
                 </div>
@@ -82,7 +82,7 @@ export default function Navbar() {
                         </a>
                     ))}
                     <div className="h-px bg-white/10 my-2" />
-                    <a href="/#contact" onClick={(e) => handleNavClick(e, '/#contact')} className="w-full py-3 text-center rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold transition-colors shadow-lg">
+                    <a href="/#contact-form" onClick={(e) => handleNavClick(e, '/#contact-form')} className="w-full py-3 text-center rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold transition-colors shadow-lg">
                         Jetzt kostenlos anfragen
                     </a>
                 </motion.div>
