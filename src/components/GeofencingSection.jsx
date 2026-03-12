@@ -132,8 +132,7 @@ export default function GeofencingSection() {
                 <div className="order-1 lg:order-2 max-w-xl relative z-10">
                     <div className="flex items-start gap-4 mb-6">
                         <div className="inline-flex shrink-0 mt-2 items-center justify-center p-3 bg-indigo-50 text-indigo-600 rounded-2xl shadow-sm border border-indigo-100 relative">
-                            <MapPin size={32} className="animate-pulse" />
-                            <div className="absolute inset-0 border-2 border-indigo-400 rounded-2xl animate-ping opacity-20"></div>
+                            <MapPin size={32} />
                         </div>
                         <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight">
                             Magische Anziehung.<br /><span className="text-indigo-600">Per GPS.</span>

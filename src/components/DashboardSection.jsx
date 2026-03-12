@@ -79,8 +79,9 @@ export default function DashboardSection() {
         >
             {/* Perspective wrapper */}
             <div style={{ perspective: '2000px' }} className="w-full">
+                <div className="w-full lg:w-full rounded-[20px] md:rounded-[24px] border border-white/5 bg-[#08080A]/90 backdrop-blur-3xl overflow-hidden shadow-[10px_20px_50px_rgba(0,0,0,0.8)] md:shadow-[20px_40px_80px_rgba(0,0,0,0.8)] flex flex-col">
                 <motion.div
-                    className="w-full lg:w-full rounded-[20px] md:rounded-[24px] border border-white/5 bg-[#08080A]/90 backdrop-blur-3xl overflow-hidden shadow-[10px_20px_50px_rgba(0,0,0,0.8)] md:shadow-[20px_40px_80px_rgba(0,0,0,0.8)] flex flex-col"
+                    className="w-full h-full flex flex-col"
                     style={{ rotateY: 8, rotateX: 5, z: 100 }}
                     initial={{ rotateY: 15, rotateX: 10, opacity: 0, scale: 0.9 }}
                     animate={graphicInView ? { rotateY: 8, rotateX: 5, opacity: 1, scale: 1 } : { rotateY: 15, rotateX: 10, opacity: 0, scale: 0.9 }}
@@ -100,7 +101,7 @@ export default function DashboardSection() {
                             </div>
                         </div>
                         <div className="px-3 md:px-4 py-1.5 md:py-2 rounded-lg bg-indigo-600/20 text-indigo-400 text-[10px] md:text-sm font-semibold flex items-center gap-1.5 md:gap-2 border border-indigo-500/30">
-                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-indigo-400 animate-pulse"></div>
+                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-indigo-400"></div>
                             Scanner Aktiv
                         </div>
                     </div>
@@ -131,16 +132,18 @@ export default function DashboardSection() {
                             {/* Progress Bar */}
                             <div className="w-full h-2 md:h-3 bg-white/5 rounded-full overflow-hidden relative z-10">
                                 <motion.div
-                                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-orange-500 via-yellow-400 to-green-400 rounded-full"
-                                    initial={{ width: "0%" }}
-                                    animate={graphicInView ? { width: "100%" } : { width: "0%" }}
+                                    className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-orange-500 via-yellow-400 to-green-400 rounded-full"
+                                    style={{ transformOrigin: "left" }}
+                                    initial={{ scaleX: 0 }}
+                                    animate={graphicInView ? { scaleX: 1 } : { scaleX: 0 }}
                                     transition={{ duration: 1.5, ease: "easeInOut", delay: 0.3 }}
                                 ></motion.div>
                                 {/* Glow effect for bar */}
                                 <motion.div
-                                    className="absolute top-1/2 left-0 h-4 md:h-8 bg-gradient-to-r from-orange-500 via-yellow-400 to-green-400 rounded-full blur-sm md:blur border-none opacity-30 -translate-y-1/2 mt-1"
-                                    initial={{ width: "0%" }}
-                                    animate={graphicInView ? { width: "100%" } : { width: "0%" }}
+                                    className="absolute top-1/2 left-0 w-full h-4 md:h-8 bg-gradient-to-r from-orange-500 via-yellow-400 to-green-400 rounded-full blur-sm md:blur border-none opacity-30 -translate-y-1/2 mt-1"
+                                    style={{ transformOrigin: "left" }}
+                                    initial={{ scaleX: 0 }}
+                                    animate={graphicInView ? { scaleX: 1 } : { scaleX: 0 }}
                                     transition={{ duration: 1.5, ease: "easeInOut", delay: 0.3 }}
                                 ></motion.div>
                             </div>
@@ -278,6 +281,7 @@ export default function DashboardSection() {
 
                     </div>
                 </motion.div>
+                </div>
             </div>
         </motion.div>
 

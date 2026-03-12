@@ -21,7 +21,6 @@ export default function BonusReviews() {
                             transition={{ duration: 0.5 }}
                         >
                             <span className="flex h-2 w-2 relative">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                             </span>
                             5-Sterne Autopilot
@@ -116,13 +115,6 @@ export default function BonusReviews() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.8 }}
                                 >
-                                    {/* Green Pulsating Border Animation */}
-                                    <motion.div 
-                                        className="absolute -inset-[2px] rounded-3xl border-2 border-green-500/50 -z-10"
-                                        animate={{ scale: [1, 1.05, 1], opacity: [0.5, 0, 0.5] }}
-                                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                                    />
-
                                     <motion.h4
                                         className="font-bold text-gray-900 text-[20px] lg:text-[22px] mb-1"
                                         initial={{ opacity: 0, y: 10 }}
@@ -155,12 +147,9 @@ export default function BonusReviews() {
                                                         opacity: [0, 1],
                                                     }}
                                                     viewport={{ once: true }}
-                                                    transition={{ 
-                                                        delay: 1.5 + (i * 0.15), 
+                                                    transition={{
+                                                        delay: 1.5 + (i * 0.15),
                                                         duration: 0.5,
-                                                        repeat: Infinity,
-                                                        repeatType: "loop",
-                                                        repeatDelay: 4,
                                                         ease: "easeOut"
                                                     }}
                                                 >

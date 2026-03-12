@@ -13,7 +13,6 @@ const FloatingIcon = ({ icon: Icon, delay, x, y, size = 24 }) => (
         }}
         transition={{
             duration: 8,
-            repeat: Infinity,
             delay,
             ease: "easeInOut"
         }}
@@ -83,7 +82,7 @@ export default function ContactCTA() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 text-sm font-bold text-indigo-600 mb-8 backdrop-blur-sm">
-                            <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
+                            <span className="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
                             Onboarding Plätze für diesen Monat verfügbar
                         </div>
 
@@ -201,12 +200,6 @@ export default function ContactCTA() {
                                                 whileTap={status !== 'sending' ? { scale: 0.985 } : {}}
                                                 className="w-full py-5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-70 disabled:cursor-not-allowed text-white font-black text-xl rounded-2xl transition-all shadow-xl shadow-indigo-600/10 flex items-center justify-center gap-3 group relative overflow-hidden"
                                             >
-                                                <motion.div
-                                                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-150%]"
-                                                    animate={{ translateX: ["-150%", "150%"] }}
-                                                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
-                                                />
-
                                                 {status === 'sending' ? (
                                                     <Loader2 size={22} className="relative z-10 animate-spin" />
                                                 ) : (
@@ -237,11 +230,6 @@ export default function ContactCTA() {
                                                 whileTap={{ scale: 0.985 }}
                                                 className="flex items-center justify-center gap-3 bg-[#25D366] text-white font-black text-xl py-5 rounded-2xl transition-all group shadow-xl shadow-green-500/10 relative overflow-hidden"
                                             >
-                                                <motion.div
-                                                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-150%]"
-                                                    animate={{ translateX: ["-150%", "150%"] }}
-                                                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 1.5 }}
-                                                />
                                                 <img src="/whatsapp.svg" alt="WhatsApp" className="w-8 h-8 relative z-10 group-hover:scale-105 transition-transform" />
                                                 <span className="relative z-10 font-black text-white">Direkt per WhatsApp</span>
                                             </motion.a>

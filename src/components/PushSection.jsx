@@ -11,7 +11,7 @@ export default function PushSection() {
     });
 
     // Snappy spring — immediate response, no lag
-    const smoothProgress = useSpring(scrollYProgress, { stiffness: 300, damping: 40, mass: 0.3 });
+    const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 60, mass: 1 });
 
     // ScrollArea = 200vh → total range = 300vh
     // Sticky starts at ~33% (phone fully in viewport)
@@ -53,8 +53,7 @@ export default function PushSection() {
         <>
             <div className="flex items-start gap-4 mb-6">
                 <div className="inline-flex items-center justify-center p-3 mt-2 bg-indigo-50 text-indigo-600 rounded-2xl shadow-sm border border-indigo-100 relative shrink-0">
-                    <Bell size={32} className="animate-pulse" />
-                    <div className="absolute inset-0 border-2 border-indigo-400 rounded-2xl animate-ping opacity-20"></div>
+                    <Bell size={32} />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight m-0">
                     Nachrichten direkt <br />auf den <span className="text-indigo-600">Sperrbildschirm.</span>

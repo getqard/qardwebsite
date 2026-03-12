@@ -61,13 +61,13 @@ const InteractiveMockups = ({ id, activeStep, activeData }) => (
 
         {/* Feature Display Box */}
         <div className="absolute inset-0 bg-[#0A0A0F]/80 lg:bg-white/5 backdrop-blur-3xl rounded-[2.5rem] lg:rounded-[3rem] border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center p-6 lg:p-10 text-center overflow-hidden">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="popLayout">
                 <motion.div
                     key={activeStep}
                     initial={{ scale: 0.95, opacity: 0, y: 15 }}
                     animate={{ scale: 1, opacity: 1, y: 0 }}
                     exit={{ scale: 1.05, opacity: 0, y: -15 }}
-                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     className="flex flex-col items-center w-full h-full justify-center absolute inset-0"
                 >
                     {activeStep === 0 ? (
@@ -239,24 +239,41 @@ export default function HowItWorks() {
         restDelta: 0.001,
     });
 
-    // Step detection via IntersectionObserver — robust across all screen sizes
+    // Step detection — finds the step closest to viewport center
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveStep(Number(entry.target.dataset.step));
-                    }
+        const handleScroll = () => {
+            const viewportCenter = window.innerHeight / 2;
+            let closestStep = 0;
+            let closestDistance = Infinity;
+
+            stepRefs.current.forEach((ref, index) => {
+                if (!ref) return;
+                const rect = ref.getBoundingClientRect();
+                const stepCenter = rect.top + rect.height / 2;
+                const distance = Math.abs(stepCenter - viewportCenter);
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestStep = index;
+                }
+            });
+
+            setActiveStep(closestStep);
+        };
+
+        let ticking = false;
+        const onScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    handleScroll();
+                    ticking = false;
                 });
-            },
-            { rootMargin: '-40% 0px -40% 0px' }
-        );
+                ticking = true;
+            }
+        };
 
-        stepRefs.current.forEach((ref) => {
-            if (ref) observer.observe(ref);
-        });
-
-        return () => observer.disconnect();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
     // Mobile: show/hide fixed overlay based on section visibility

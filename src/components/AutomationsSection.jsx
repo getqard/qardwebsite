@@ -114,7 +114,7 @@ export default function AutomationsSection() {
                             <div className="absolute top-0 left-0 w-1.5 h-full bg-orange-400"></div>
                             <div className="flex justify-between items-start mb-2">
                                 <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-green-50 border border-green-100 text-green-600 text-[10px] font-bold tracking-wider uppercase">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
                                     Aktiv
                                 </div>
                                 <Coffee className="text-orange-400 opacity-50 group-hover:opacity-100 transition-opacity" size={24} />
@@ -131,7 +131,7 @@ export default function AutomationsSection() {
                             <div className="absolute top-0 left-0 w-1.5 h-full bg-pink-400"></div>
                             <div className="flex justify-between items-start mb-2">
                                 <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-green-50 border border-green-100 text-green-600 text-[10px] font-bold tracking-wider uppercase">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
                                     Aktiv
                                 </div>
                                 <Gift className="text-pink-400 opacity-50 group-hover:opacity-100 transition-opacity" size={24} />
@@ -148,7 +148,7 @@ export default function AutomationsSection() {
                             <div className="absolute top-0 left-0 w-1.5 h-full bg-blue-400"></div>
                             <div className="flex justify-between items-start mb-2">
                                 <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-green-50 border border-green-100 text-green-600 text-[10px] font-bold tracking-wider uppercase">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
                                     Aktiv
                                 </div>
                                 <CalendarDays className="text-blue-400 opacity-50 group-hover:opacity-100 transition-opacity" size={24} />
