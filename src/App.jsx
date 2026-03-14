@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PushSection from './components/PushSection';
@@ -20,6 +20,8 @@ const Datenschutz = React.lazy(() => import('./pages/Datenschutz'));
 const AGB = React.lazy(() => import('./pages/AGB'));
 const AboutUs = React.lazy(() => import('./pages/AboutUs'));
 const Contact = React.lazy(() => import('./pages/Contact'));
+const Pitch = React.lazy(() => import('./pages/Pitch'));
+const Presenter = React.lazy(() => import('./pages/Presenter'));
 
 const HomePage = () => (
     <>
@@ -74,29 +76,49 @@ const HomePage = () => (
     </>
 );
 
+const AppLayout = () => {
+    const location = useLocation();
+    const isPitchRoute = location.pathname.startsWith('/pitch');
+
+    if (isPitchRoute) {
+        return (
+            <Suspense fallback={<div className="min-h-screen bg-qard-dark" />}>
+                <Routes>
+                    <Route path="/pitch" element={<Pitch />} />
+                    <Route path="/pitch/presenter" element={<Presenter />} />
+                </Routes>
+            </Suspense>
+        );
+    }
+
+    return (
+        <div className="antialiased w-full overflow-clip flex flex-col min-h-screen bg-qard-dark">
+            {/* Global Navigation */}
+            <Navbar />
+
+            <main className="flex-grow">
+                <Suspense fallback={<div className="min-h-screen" />}>
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/impressum" element={<Impressum />} />
+                        <Route path="/datenschutz" element={<Datenschutz />} />
+                        <Route path="/agb" element={<AGB />} />
+                        <Route path="/ueber-uns" element={<AboutUs />} />
+                        <Route path="/kontakt" element={<Contact />} />
+                    </Routes>
+                </Suspense>
+            </main>
+
+            {/* Global Footer (Dark) */}
+            <Footer />
+        </div>
+    );
+};
+
 function App() {
     return (
         <Router>
-            <div className="antialiased w-full overflow-clip flex flex-col min-h-screen bg-qard-dark">
-                {/* Global Navigation */}
-                <Navbar />
-
-                <main className="flex-grow">
-                    <Suspense fallback={<div className="min-h-screen" />}>
-                        <Routes>
-                            <Route path="/" element={<HomePage />} />
-                            <Route path="/impressum" element={<Impressum />} />
-                            <Route path="/datenschutz" element={<Datenschutz />} />
-                            <Route path="/agb" element={<AGB />} />
-                            <Route path="/ueber-uns" element={<AboutUs />} />
-                            <Route path="/kontakt" element={<Contact />} />
-                        </Routes>
-                    </Suspense>
-                </main>
-
-                {/* Global Footer (Dark) */}
-                <Footer />
-            </div>
+            <AppLayout />
         </Router>
     );
 }

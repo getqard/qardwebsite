@@ -1,13 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function DeviceMockup({ children, className = "" }) {
+export default function DeviceMockup({ children, className = "", hideNotch = false }) {
     return (
         <div className={`relative mx-auto w-full max-w-[320px] aspect-[19.5/40] ${className}`}>
             {/* The Phone Hardware Frame */}
             <div className="absolute inset-0 rounded-[3rem] border-[8px] border-zinc-800 bg-black shadow-2xl overflow-hidden ring-1 ring-white/10 z-20 pointer-events-none">
                 {/* Dynamic Island Mock */}
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-7 bg-black rounded-full z-50"></div>
+                {!hideNotch && (
+                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-[18px] bg-black rounded-full z-50"></div>
+                )}
 
                 {/* Screen Content Wrapper */}
                 <div className="absolute inset-0 z-10 bg-zinc-900 overflow-hidden pointer-events-auto">
