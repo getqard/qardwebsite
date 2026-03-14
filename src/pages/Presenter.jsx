@@ -41,31 +41,31 @@ const SLIDE_NAMES = [
 ];
 
 const SPEAKER_NOTES = {
-    0: { 0: "Einstieg: ==Warteschlange vor dem Laden.== Tausende Leute da... und am nächsten Tag ist der Laden wieder leer. **Warum? Weil ihr sie nicht halten könnt.**" },
+    0: { 0: "- - Einstieg: Warteschlange vor dem Laden.T==ausende==[KLICK] Leute da... \n---\n\n---\n> und am nächsten Tag ist der Laden wieder leer. **Warum? Weil ihr sie nicht halten könnt.**" },
     1: {
-        0: "Was macht ihr als Erstes wenn ihr ein Geschäft eröffnet?",
-        1: "Logo, Insta, TikTok, Flyer... Ihr kauft euch Kunden teuer ein. [KLICK]",
-        2: "Aber Kundenbindung? Meistens garnicht. Oder 10% Rabatt. Oder App. ==9 von 10 laden sie nicht runter.==",
-        3: "Oder die Papierskarte. [KLICK]",
-        4: "Verloren, vergessen, weggeworfen. [KLICK]",
-        5: "**Das Problem ist nicht dass Kunden nicht wiederkommen wollen.** Das Problem ist, ==ihr seid nicht da wo die Aufmerksamkeit ist.=="
+        0: "Ich hab euch gerade erzählt was das Problem ist. \nJetzt zeig ich euch mal wie das aussieht",
+        1: "Hunderte Kunden gehen in lokale Geschäfte. [KLICK]",
+        2: "wie viele kommen davon wieder? [KLICK]",
+        3: "Man weiß es nicht!\n\nKein Gastronom, Kein Café, Kein Friseur. \nHunderte kommen rein, hunderte gehen raus. \n\nEs gibt keinen effektiven Weg auch nur einen davon wieder zu erreichen \n",
+        4: "Und alles was es bisher gibt? \n\n- Papierstempelkarten – kennt jeder. Vergisst jeder. Verliert jeder.\n- Treue-Apps – klingt super in der Theorie. Lädt keiner runter. \n- Und dann noch Newsletter, Flyer, Rabattzettel etc.  - all das landet im Spam oder Müll\n[PAUSE]\nUnd am Ende bleibt dem Betrieber genau eine Strategie\n",
+        5: "Hoffen, dass sie wiederkommen.\n\nAber Hoffnung ist keine Strategie\n\nUnd genau da setzt QARD an"
     },
     2: {
-        0: "==Die Aufmerksamkeit ist genau hier.== 4 Stunden am Tag.",
-        1: "Wir bringen euer Geschäft **direkt auf den Sperrbildschirm** eurer Kunden.",
-        2: "Kunde drückt Stempel. [PAUSE]\n> Animation läuft\nPush-Benachrichtigung kommt.",
-        3: "Keine App, kein Login. Es ist direkt im **Apple Wallet** und **Google Wallet**.",
-        4: "Kunde weiß immer wie viele Punkte er hat, was ihm noch fehlt. ==Das ist QARD.=="
+        0: "Und so funktioniert das:\n- Nicht über Instagram wo Algorithmus entscheidet\n- Nicht über ne App die niemand runterlädt\n\nSondern : DIREKT auf dem Handy [KLICK]. Direkt auf dem Sperrbildschirm.",
+        1: "Direkt auf dem Sperrbildschirm. [KLICK]",
+        2: "[KLICK]",
+        3: "Ab dem ersten Besuch: Der Kunde ist im System. \n\nMan kann ihm schrieben\n\nJederzeit. Und direkt.",
+        4: "Kommt er zwei Wochen nicht mehr? \n\nDas System merkt das – und holt ihn zurück.  Automatisch!"
     },
-    3: { 0: "Aber was passiert wenn der Kunde seit 3 Monaten nicht bei euch war?", 1: "> Animation läuft\nEr läuft an eurem Laden vorbei. Wallet checkt den Radius. Push auf den Lockscreen. **'Hallo XY, lange nicht gesehen.'** Ihr fischt ihn direkt von der Straße wieder rein." },
-    4: { 0: "Nächster Klick: **Geburtstag.** [KLICK]", 1: "> Animation läuft\nPush Notification am Geburtstag: ==Gratis Döner wartet an der Kasse.==" },
-    5: { 0: "Und ganz wichtig: **Google Bewertungen.** Wer ist zufrieden?", 1: "> Sterne leuchten auf\nDer Kunde klickt direkt auf den Stern und landet auf eurem Google Profil. ==Autopilot für 5-Sterne-Bewertungen.==" },
-    6: { 0: "Und das ist kein Konzept. **Das existiert. Jetzt.**", 1: "Apple Wallet. Google Wallet. Auf Milliarden von Geräten vorinstalliert. ==Wir hacken uns einfach in das System, was schon da ist.==" },
-    7: { 0: "Das iPhone mit der Wallet-Karte. Das ist das, was der Kunde sieht. Das ist der Grund, warum er sein Handy hinhält.", 1: "Aber der eigentliche Wert beginnt danach. Ab diesem Moment habt ihr den Kontakt. **Das System dahinter ist QARD.**" },
-    8: { 0: "Ein Tool, wo man sich eine Stempelkarte zusammenklickt... das machen andere.", 1: "**Wir bauen ein System, das für dich arbeitet.** Inaktive zurückholen, Geofencing, Geburtstage, etc." },
-    9: { 0: "Das komplette Ökosystem:\n- **Chef-App** um das Geschäft zu steuern\n- **Team-App** blitzschnell scannen und fertig\n- **Backend** 24/7 automatisiert", 1: "Team-App, blitzschnell scannen und fertig.", 2: "Und unser Backend, was 24/7 alles automatisiert und ==direkt auf den Sperrbildschirm des Kunden feuert.==" },
-    10: { 0: "Für wen ist das Ganze?", 1: "Gastro, Beauty, Barber, Retail, Dienstleister – jeder der einen Laden hat und Kunden durch die Tür kommen. **Das ist JEDER.**", 2: "Allein in Deutschland sind das... ==1 Million Geschäfte.== Und keines von denen hat aktuell so ein System." },
-    11: { 0: "**1 Euro.**\n[PAUSE]", 1: "Aber nur symbolisch. Wir suchen nicht einfach Geld. Wir suchen:\n- Den richtigen **Partner**\n- **Netzwerk**, Vertrieb\n- Zugang zur **Gastro-Welt**" },
+    3: { 0: "Was passiert wenn er am Laden vorbeiläuft? \n\nSein Handy erinnert ihn an das Geschäft" },
+    4: { 0: "Er hat Geburtstag? \n\nDann bekommt er ein Geschenk.\n\nAutomatisch und  ohne dass jemand einen Finger rührt." },
+    5: { 0: "Und stellt euch vor – er war zufrieden und bewertet das Geschäft auf Google. \n\nVon allein. Ohne dass ihn jemand aktiv fragt." },
+    6: { 0: "Und das liebes StartUpStage. \n\nDas ist KEIN KONZEPT.  Das Existiert. Jetzt schon!", 1: "Kurz zum Verständnis wie das funktioniert.\n\nAuf jedem iPhone ist eine App vorinstalliert die ihr alle kennt – Apple Wallet.\n\nDa habt ihr eure Kreditkarten drin, Boardingpässe, Konzerttickets.\n\nAuf Android gibt es das Gleiche mit Google Wallet. Das ist auf drei Milliarden Handys weltweit einfach schon drauf.\n\nIch hab diese Infrastruktur genommen – die schon auf jedem Handy existiert – und darum ein komplettes Kundenbindungssystem gebaut" },
+    7: { 0: "Digitale Stempelkarten, Punktesysteme, VIP-Mitgliedschaften – \n\ndas ist das was der Kunde sieht.\n\n Das ist der Grund warum er sein Handy hinhält. ", 1: "Aber der eigentliche Wert beginnt danach.\n\n Ab dem Moment wo er drin ist, hat man den Kontakt. \n\nAb da kann man schreiben, ihn zurückholen, ihn belohnen. \n\nDie Stempelkarte ist der Einstieg.  Und das System dahinter ist QARD" },
+    8: { 0: "Und mit System mich t meine ich nicht ein Tool wo man sich eine digitale Stempelkarte zusammenklickt. \n\nSowas gibt es.\n\n Ich meine ein System das die komplette Arbeit für einen  übernimmt. \nDas automatisch erkennt welcher Kunde seit zwei Wochen nicht mehr da war – und ihn zurückholt.\n Das weiß wann er Geburtstag hat und was schenkt. \n\n[PAUSE] Und wenn der Geschäftsführer nicht mal weiß was er seinen Kunden schreiben soll, schlägt ihm eine KI die perfekte Nachricht vor. Er tippt einmal – fertig. " },
+    9: { 0: "Dafür hab ich alles gebaut was man braucht. \n\n- Eine App für den Chef – damit er alles  sieht und steuern kann.\n\n- Eine App für das Team an der Kasse oder Bedienung. \n\n- Und ein Backend das im Hintergrund rund um die Uhr automatisch arbeitet\n\nUnd das alles landet am Ende hier. Direkt auf dem Sperrbildschirm eures Kunden. Ohne App-Download. Ohne irgendwas", 1: "[KLICK]", 2: "[KLICK]" },
+    10: { 0: "Für wen ist das Ganze?", 1: "Gastro, Beauty, Barber, Retail, Dienstleister \n– jeder der einen Laden hat und Kunden durch die Tür kommen. \n\nund jeder der Stammkundenwill", 2: "Allein in Deutschland sind das... ==1 Million Geschäfte.== Und keines von denen hat aktuell so ein System." },
+    11: { 0: "wie gesagt aif fianziellem Invest bin ich nicht aus. Das steht schon. ", 1: "Woran mir liegt ist der richtige Partner. \n\nJemand der Türen öffnet die ich alleine nicht aufkriege.\n\n Netzwerk, Vertriebserfahrung, Zugang zur Gastro-Welt. \n\nOb das eine Beteiligung wird, ein Revenue-Share oder eine strategische Kooperation – das find ich lieber gemeinsam raus " },
     12: { 0: "[PAUSE]\n> Transition – kurz wirken lassen" },
     13: { 0: "Das ist das Produkt. **99€ im Monat.** All-in-One. Einrichtung kostet 199€. ==Transparent und fair.==" },
     14: { 0: "Wie geht's weiter?", 1: "==Launch diese Woche.== Produkt ist ready.", 2: "Sommer 2026: **100 Kunden. 10k MRR.**", 3: "Ende 2026: **500 Kunden. 50k MRR.**", 4: "2027: Skalierung DACH. ==Über 1000 Kunden und 100k MRR.==" },
@@ -375,6 +375,22 @@ const Presenter = () => {
         prevNav.current.saved = true;
     };
 
+    const [copyFeedback, setCopyFeedback] = useState(false);
+    const copyAllNotes = async () => {
+        const allNotes = {};
+        for (let slide = 0; slide < TOTAL_SLIDES; slide++) {
+            const maxSteps = SLIDE_STEPS[slide] || 0;
+            allNotes[slide] = {};
+            for (let step = 0; step <= maxSteps; step++) {
+                const saved = localStorage.getItem(`qard-notes-${slide}-${step}`);
+                allNotes[slide][step] = saved ?? SPEAKER_NOTES[slide]?.[step] ?? '';
+            }
+        }
+        await navigator.clipboard.writeText(JSON.stringify(allNotes, null, 4));
+        setCopyFeedback(true);
+        setTimeout(() => setCopyFeedback(false), 1500);
+    };
+
     // --- Persist settings ---
     useEffect(() => { localStorage.setItem('qp-fontsize', fontSize); }, [fontSize]);
     useEffect(() => { localStorage.setItem('qp-notewidth', noteWidth); }, [noteWidth]);
@@ -564,6 +580,11 @@ const Presenter = () => {
 
                         {/* Reset note */}
                         <Btn onClick={resetNote}>Zurücksetzen</Btn>
+
+                        {/* Copy all notes as JSON */}
+                        <Btn onClick={copyAllNotes} className={copyFeedback ? '!text-emerald-400' : ''}>
+                            {copyFeedback ? '✓ Kopiert' : 'Alle Notizen kopieren'}
+                        </Btn>
 
                         <div className="h-3 w-px bg-white/10 mx-1" />
 
